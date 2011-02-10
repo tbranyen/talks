@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Twitter - Bad</title>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <style>
+        html, body {
+            background-color: #000;
+            font-family: "Droid Sans";
+        }
+        h1 {
+            color: #FFF;
+        }
+        #tweets {
+            margin-top: 20px;
+            width: 50%;
+            background-color: #333;
+            border-right: 5px solid #CCC;
+            padding: 10px;
+        }
+            #tweets div h1 {
+                color: #FFF;
+            }
+
+        #tweets .tweet {
+            margin-top: 20px;
+        }
+
+        #tweets .tweet .text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF4271;
+        }
+        #tweets .tweet .screen_name {
+            color: #FAE;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Twitter feed</h1>
+    <label for="nick"> <input type="text" placeholder="twitter handle" id="nick" name="nick" />
+    <button id="search">Search</button>
+    <div id="tweets"> </div>
+    <script src="jquery-1.4.4.min.js"></script>
+    <script>
+        // Ready closure
+        this.jQuery(function($) {
+
+            // Render out the tweets
+            function renderTweets(nick, tweets) {
+                // Cached fragment to work with
+                var output = $("<div/>"),
+                    // Dumping DOM element
+                    placeholder = $("#tweets"),
+                    screenname = nick;
+
+                // Output the user
+                output.append("<h1>Tweets for "+ nick +"</h1>");
+                
+                // For each tweet add the tweet text and the author
+                $.each(tweets, function(i, tweet) {
+                    // Parse out data
+                    var tweet_output = $("<div class='tweet'/>");
+                    tweet_output.append("<span class='text'>"+ tweet.text +"</span>")
+                                .append("<div class='screen_name'>"+ tweet.user.screen_name +"</div>");
+
+                    // Render tweets to output
+                    output.append(tweet_output);
+                });
+
+                // Render output to page
+                placeholder.html(output);
+
+            }
+
+            // Twitter feed url
+            var twitter_url = "http://api.twitter.com/version/statuses";
+
+            // On search click...
+            $("#search").bind("click", function() {
+                var nick = $("#nick").val();
+
+                // Fetch the twitter feed
+                $.getJSON("http://twitter.com/status/user_timeline/"+ nick +".json?callback=?", function(tweets) {
+                    renderTweets(nick, tweets);
+                });
+
+                // Use this to kill the event propagation and prevent the default action
+                return false;
+            });
+
+        });
+    </script>
+</body>
+</html>

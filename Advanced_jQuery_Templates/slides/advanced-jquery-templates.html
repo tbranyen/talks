@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Advanced jQuery Templates Practically Applied</title>
+  <link type="text/css" rel="stylesheet" href="preso/sh/styles/shCoreDefault.css"/>
+  <link type="text/css" rel="stylesheet" href="preso/css/dzslides.css"/>
+  <link type="text/css" rel="stylesheet" href="preso/css/custom.css"/>
+
+  <script type="text/javascript" src="preso/js/jquery.js"></script>
+  <script type="text/javascript" src="preso/sh/scripts/shCore.js"></script>
+  <script type="text/javascript" src="preso/sh/scripts/shAutoloader.js"></script>
+  <script type="text/javascript" src="preso/js/dzslides.js"></script>
+  <script type="text/javascript" src="preso/js/custom.js"></script>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+  <script src="http://sync.tabdeveloper.com/socket.io/socket.io.js"></script> 
+  <script type="text/javascript">
+    jQuery(function($) {
+      var sync_on = true
+        , sync_button = $(".sync-button").bind('click', function() {
+            sync_on = !sync_on;
+            sync_button.attr('value', sync_on ? 'Turn Sync Off' : 'Turn Sync On');
+          });
+        
+      var socket = new io.Socket('sync.tabdeveloper.com', {
+        port: 1234
+      });
+      socket.connect();
+      socket.on('message', function(e) {
+        if(sync_on && e.state) {
+          location.hash = e.state;
+        }
+        if(e.cornify) {
+          cornify_add();
+        }
+        if(e.refresh) {
+          location.reload(true);
+        }
+      });
+    });
+  </script>
+
+  <style>
+    dt {
+      font-size: 150%;
+      color: #C2D4DF;
+    }
+    dd {
+      color: #FFA;
+      margin-bottom: 35px;
+    }
+    .note {
+      font-style: italic;
+      color: #89959D;
+    }
+    em {
+      padding: 7px;
+      text-shadow: 1px 1px 7px rgba(186,210,232,.7);
+    }
+    strong {
+      font-size: 130%;
+      font-weight: bold;
+    }
+    .template-table {
+      width: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" class="sync-button" value="Turn Sync Off">
+
+<!-- Introduction -->
+<section>
+  <h1>Advanced jQuery Templates Practically Applied</h1>
+  <div style="width:820px;padding-top:1em" class="smaller">
+    <div style="width:300px;float:right">
+      <a href="http://bocoup.com/">
+        <img style="display:block;margin:0.4em auto 0" src="media/logo/bocoup-200.png" alt="bocoup">
+        <p style="margin:0">bocoup</p>
+      </a>
+    </div>
+    <div style="width:500px;float:right">
+      <h3 style="margin-bottom:0">Tim Branyen @tbranyen</h3>
+      <p class="smaller">
+        <a href="http://tabdeveloper.com/">tabdeveloper.com</a><br/>
+        <a href="http://github.com/tbranyen/">github.com/tbranyen</a><br/>
+        <a href="http://twitter.com/tbranyen">@tbranyen</a><br/>
+      </p>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+</section>
+
+<section>
+  <h1>Who am I?</h1>
+  <ul>
+    <li>Tim Branyen @tbranyen</li>
+    <li>2009 rit alum</li>
+    <li>software engineer</li>
+    <li>work in boston at bocoup</li>
+  </ul>
+</section>
+
+<section>
+  <h1>What I do!</h1>
+  <ul>
+    <li>client side development with javascript</li>
+    <li>server side development with django</li>
+    <li>native development with lua &amp; llvm</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Talk motivation</h1>
+  <ul>
+    <li>Websites do not often exhibit native application speed.</li>
+    <li>Its a hassle to make a single page website function like a real website.</li>
+    <li>Caching that is focused on content instead of pages.</li>
+    <li>I think its really cool to render on both the server and the client using the same exact templates and contexts!</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Time to get started!</h1>
+  <ul>
+    <li>Terminology and Concepts</li>
+    <li>Pros and Cons</li>
+    <li>Availability</li>
+  </ul>
+</section>
+
+<!-- Getting started -->
+<section>
+  <h1>Template terminology</h1>
+  <p class="note">Universal templating terms</p>
+  <dl>
+    <dt>template</dt>
+    <dd>Structure to provide meaning and placeholders for the context object.</dd>
+    <dt>context</dt>
+    <dd>Object that contains all data represented within the template.</dd>
+    <dt>render</dt>
+    <dd>Method which weds the template and context.</dd>
+  </dl>
+</section>
+
+<section>
+  <h1>Terminology continued...</h1>
+  <dl>
+    <dt>Progressive enhancement</dt>
+    <dd>A concept that builds upon limited markup to create a richer experience for those with the capabilities.</dd>
+    <dt>Headers &amp; conditional caching.</dt>
+    <dd>Headers are sent before your site content and are key/value pairs in the HTTP stack.<br>Conditional caching makes use of a header called E-Tag to set a unique identifier for a specific state of content.</dd>
+  </dl>
+</section>
+
+<!-- Show headers -->
+<section>
+  <h1>Headers example</h1>
+  <p>HTTP/1.1 200 OK</p>
+  <p>Server: Apache/2.2</p>
+  <p>Content-Length: 3000</p>
+  <p>Content-Type: text/html; charset=UTF-8</p>
+  <p>ETag: "39df9d9d343"</p>
+  <p>&lt;!doctype html&gt;</p>
+  <p>&lt;html&gt;</p>
+  <p>...</p>
+</section>
+
+<section>
+  <h1>Hello world template example</h1>
+  <p>Breakout code example!</p>
+</section>
+  
+<section>
+  <h1>Pros</h1>
+  <ul>
+    <li>New possibilities for performant web apps/sites/pages that allow for accessibility and maintainability.</li>
+    <li>New levels of caching, no longer cache single pages, but have content and layout aware levels as well.</li>
+    <li>Techniques are generic enough that they may work with existing sites.</li> 
+  </ul>
+</section>
+
+<section>
+  <h1>Cons</h1>
+  <ul>
+    <li>None</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Cons for reals</h1>
+  <ul>
+    <li>Nobody believes there are no cons, glass is half full!</li>
+    <li>Server side implementations may be <em>limited/non-existent</em> <em>and/or</em> not work exactly as you intended.</li>
+    <li>When using templates you need to stick with whats available on both the client and the server</li>
+    <li>Frameworks may complicate the ability to execute low level logic.</li>
+    <li>HTML5 fun <em>*isn't*</em> for everyone...yet; may need to use beta browsers (FFox 4, IE 9).</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Various template engine availability</h1>
+  <table class="template-table">
+    <th>Engine</th>
+    <th>Server</th>
+    <th>Client</th>
+    <th>Notes</th>
+
+    <tr>
+      <td>EJS</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Created by Jupiter Consulting - JavaScript MVC folks.</td>
+    </tr>
+
+    <tr>
+      <td>Closure Templates</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Promoted as 'language neutral' by Google</td>
+    </tr>
+
+    <tr>
+      <td>jQuery Templates</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Still in beta</td>
+    </tr>
+
+    <tr>
+      <td>Mustache</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Is there any language this doesn't work in?</td>
+    </tr>
+
+    <tr>
+      <td>Jade</td>
+      <td>Yes</td>
+      <td>Yes/No</td>
+      <td>Client side has inability to render certain things. <a target="_blank" href="https://github.com/visionmedia/jade/issues/issue/144">github issue</a></td>
+    </tr>
+
+    <tr>
+      <td>Django templates</td>
+      <td>Yes</td>
+      <td>Yes/No</td>
+      <td>Client side version is outdated by major and minor releases.</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h1>Server/Client <em>hybrid</em> experiences</h1>
+  <ul>
+    <li>Client side benefits/negatives</li>
+    <li>Server side benefits/negatives</li>
+    <li>Implementating feautres</li>
+  </ul>
+</section>
+
+<!-- Hybrid web -->
+<section>
+  <h1>Client side</h1>
+  <p><em>Web pages/sites/apps should feel as close to native as possible!</em></p>
+
+  <p>Benefits</p>
+  <ul>
+    <li>Fetch only what's required with AJAX.</li>
+    <li>Can alter the browser URL without reloading the page.</li>
+    <li>Render templates instantly.</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Client side</h1>
+  <p><em>Web pages/sites/apps should feel as close to native as possible!</em></p>
+
+  <p>Drawbacks</p>
+  <ul>
+    <li>Cannot easily parse advanced templates.</li>
+    <li>Not available in all browsers, most notably latest FireFox stable and all stable IEs.</li>
+  </ul>
+</section>
+
+<!-- Hijacking links and forms -->
+<section>
+  <h1>Hijacking links and forms</h1>
+  <ul>
+    <li>These are the two most important events to capture since they are able to redirect to a new page.</li>
+    <li>For the demo only links will be hijacked.</li>
+    <li>This illustrates how progressive enhancement is integrated.</li>
+  </ul>
+</section>
+
+<!-- Utilizing HTML5 pushState -->
+<section>
+  <h1>Utilizing HTML5 pushState</h1>
+  <ul>
+    <li>Handles session state with the main ability being to alter the url location path in the address bar.</li>
+    <li>Set with pushState, we do not want replaceState since we want to inject into the session history.</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Utilizing HTML5 pushState continued...</h1>
+  <ul>
+    <li>watch with onpopstate</li>
+    <li>The event in onpopstate contains no record of the path you give it, so we’ll store that in the {state} object, if no url is found, we’ll assume its the default and replace its content.</li>
+    <li>Breakout code example!</li>
+  </ul>
+</section>
+
+<!-- HashChange event and localStorage -->
+<section>
+  <h1>Hashchange event and localStorage</h1>
+  <ul>
+    <li>Neither are ideal</li>
+    <li>Server has no concept of a hash</li>
+    <li>localStorage has no concept of whats changed on the server</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Server side - benefits</h1>
+  <p><em>Content should be accessible and search engine friendly!</em></p>
+
+  <ul>
+    <li>Dumps markup that is accessible from anything that implements HTTP/HTML.</li>
+    <li>Conditional caching can <em>only</em> be implemented at this level.</li>
+    <li>Semantic URLs that are bookmarkable</li>
+    <li>Enforces good coding practice to fetch from server cache instead of 3pty party</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Server side - drawbacks</h1>
+  <p><em>Content should be accessible and search engine friendly!</em></p>
+  <br>
+  <ul>
+    <li>Changing pages requires full page refresh.</li>
+    <li>Can only cache at the page level.</li>
+    <li>Cannot read location hash.</li>
+  </ul>
+</section>
+
+<section>
+  <p>Interesting to note that you can only do conditional caching at the server and yet without the client all the server can do is full page.</p>
+</section>
+
+<section>
+  <h1>Why node.js</h1>
+  <p>It's fast!</p>
+  <p>It's JavaScript!</p>
+  <p>It's got a jQuery templating implementation!</p>
+</section>
+
+<section>
+  <h1>Setting up the environment</h1>
+  <p><em>install node</em></p>
+  <p><em>install npm</em></p>
+  <p>npm install jqtpl</p>
+  <p>npm install express (optional, but awesome)</p>
+  <p>npm install crc (optional, for caching)</p>
+</section>
+
+<!-- Basic node app -->
+<section>
+  <h1>Running a basic node app</h1>
+</section>
+
+<!-- Server goals -->
+<section>
+  <h1>Goals for the server implementation</h1>
+  <ul>
+    <li>Can fetch templates and context based on a URL.</li>
+    <li>Can render the templates with the context.</li>
+    <li>Can cache based on the current version of the data.</li>
+  </ul>
+</section>
+
+<!-- Implementing X-Fetch header -->
+<section>
+  <h1>Implementing X-Fetch header</h1>
+  <ul>
+    <li>Utilizes HTTP Headers</li>
+    <li>This is a nearly invisible way of communicating with the server what you would like, either context or template.</li>
+    <li>Very easy to implement with jQuery</li>
+    <li>Another <em>gotcha</em> here whereas the E-Tag caching will get confused and not work</li>
+    <li>If you don't care about content caching this will still work</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Another method of caching</h1>
+  <ul>
+    <li>Define a fetch route that accepts either context or template.</li>
+    <li>Keep a hash of paths and CRC32s.</li>
+  </ul>
+</section>
+
+<!-- Implementing conditional caching -->
+<section>
+  <h1>Implementing Conditional Caching</h1>
+  <ul>
+    <li>Concept is that each request has a unique id that represents the state of the data, the response compares the state and either returns new data or cancels the request saving bandwidth.</li>
+    <li>Request sends If-None-Matched header if cached or nothing if not cached.</li>
+    <li>Response sends E-Tag.</li>
+    <li>Breakout code example!</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Implementing Conditional Caching continued...</h1>
+  <ul>
+    <li>Not for everything.</li>
+    <li>Potential for collisions is a non issue, probability is in the billions.</li>
+    <li>1 millisecond to calc a 4kb file</li>
+    <li>300 milliseconds to calc a 300kb file</li>
+    <li>Perhaps CRC the modified date or use a unix timestamp?, not as accurate</li>
+  </ul>
+</section>
+
+<!-- Implementing a cache.manifest -->
+<section>
+  <h1>Implementing a cache manifest</h1>
+  <ul>
+    <li>Must be able to serve mimetype.</li>
+    <li>List all files that should be offline.</li>
+    <li>Whitelist network files (anything async, thats not a template or context)</li>
+    <li>Breakout code example!</li>
+  </ul>
+</section>
+
+<!-- Putting it all together -->
+<section>
+  <h1>Lets try and add github repos to this demo...</h1>
+  <p>Breakout code example!</p>
+</section>
+
+<section>
+  <h1>Using node with existing implementation</h1>
+  <ul>
+    <li>Some web servers have support for proxying.</li>
+    <li>Set up a /node or similar and proxy to node.</li>
+    <li>In your hijack.js specify a different selector.</li>
+  </ul>
+</section>
+
+<!-- Beyond this talk -->
+<section>
+  <h1>Beyond this talk</h1>
+  <ul>
+    <li>Range headers<br>
+      <ul>
+        <li>Byte</li>
+        <li>XPointer</li>
+        <li>Custom selectors</li>
+      </ul>
+    </li>
+    <li>Meta refresh &lt;noscript&gt;</li>
+  </ul>
+</section>
+
+<!-- Questions -->
+<section>
+  <h1>Any questions?</h1>
+</section>
+
+
+</body>
+</html>
+<!-- vim: ts=2:sw=2:sts=2
