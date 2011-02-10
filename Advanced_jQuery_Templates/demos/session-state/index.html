@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Index</title>
+</head>
+
+<body>
+    <h1>Current page: <span>Page A</span></h1>
+    <a href="/a">Page A</a> <a href="/b">Page B</b> <a href="/c">Page C</a>
+    <script src="js/jquery.js"></script>
+    <script>
+    (function(history) {
+        jQuery(function($) {
+            // On load
+            var text;
+            window.onpopstate = function(e) {
+                if(e.state) {
+                    $('h1 span').text(e.state.text || text);
+                }
+                else {
+                    text = $('h1 span').text();
+                }
+            };
+
+            $('a').bind('click', function() {
+                var that = $(this)
+                  , text = that.text()
+                  , href = that.attr('href');
+
+                $('h1 span').text(text);
+
+                history.pushState({ href: href, text: text }, text, href);
+
+                return false;
+            });
+        });
+    })(this.history);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Basic Template Example</title>
+</head>
+
+<body>
+    <div class="main"></div>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery.tmpl.min.js" type="text/javascript"></script>
+    <script type="x-tmpl" id="hello_world">
+        ${placeholder}
+    </script>
+    <script>
+        jQuery(function($) {
+            var _context = { placeholder: 'Hello World' };
+            var _template = $("#hello_world");
+
+            $.tmpl(_template, _context).appendTo(".main");
+        });
+    </script>
+</body>
+
+</html>
