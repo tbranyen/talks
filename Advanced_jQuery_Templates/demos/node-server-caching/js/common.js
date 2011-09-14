@@ -11,7 +11,6 @@ jQuery(function($) {
     // Resuable render method
     function render(template, context) {
         // Set title
-        console.log(context);
         document.title = context.title;
         _header.html(context.title);
 
@@ -39,7 +38,7 @@ jQuery(function($) {
     };
      
     // Hijack all links
-    $("a").hijack(function(template, context) {
+    $("a.experimental").hijack(function(template, context) {
         render(template, context);
     });
 });
