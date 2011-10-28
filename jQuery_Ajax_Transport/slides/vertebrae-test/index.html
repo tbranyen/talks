@@ -1,0 +1,60 @@
+
+<!doctype html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <meta http-equiv=X-UA-Compatible content=IE=edge,chrome=1>
+
+  <title>Bone</title>
+</head>
+
+<body>
+  
+  <script src=js/libs/jquery.js></script>
+  <script src=js/libs/underscore.js></script>
+  <script src=js/libs/backbone.js></script>
+  <script src=js/libs/vertebrae.js></script>
+  <script>
+      var animals = [
+        { kind: "Dog", voice: "Bark" },
+        { kind: "Monkey", voice: "Eyeaa Hoo" },
+        { kind: "T-Rex", voice: "RAWR" },
+        { kind: "Flipper", voice: "Yipppppppp" }
+      ];
+
+      var KingdomApi = Backbone.Vertebrae.extend({
+        routes: {
+          "/animals": {
+            GET: function() {
+              return JSON.stringify(animals);      
+            }
+          }
+        }
+      });
+
+
+// Ensure the animal kingdom is ready
+new KingdomApi();
+
+var Animal = Backbone.Model.extend({
+  speak: function() {
+    return this.get("kind") + " says " + this.get("voice");
+  }
+});
+
+var Kingdom = Backbone.Collection.extend({
+  model: Animal,
+
+  url: "/animals"
+});
+
+var jungle = new Kingdom();
+
+jungle.fetch({ success: function() {
+  console.log(jungle.at(0).speak());
+}});
+
+  </script>
+</body>
+</html>
+
