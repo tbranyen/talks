@@ -13,7 +13,8 @@ article.deck-container {
 
   width: 82%;
 
-  background: url(../img/bob-600-half.png) no-repeat bottom right;
+  background: url(../img/bob-600-gone.png) no-repeat bottom right;
+  background-size: 20%;
 
   -webkit-transition-property: background;
   -webkit-transition-duration: .5s;
@@ -58,6 +59,14 @@ strong.weak.name {
 strong.weak {
   color: #999;
   padding: 25px;
+}
+
+ul {
+  padding: 25px !important;
+}
+
+article.deck-container section ul li {
+  font-size: 20px !important;
 }
 
 h3 {
