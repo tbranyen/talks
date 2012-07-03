@@ -1,10 +1,7 @@
-// Deck initialization
 $.deck('.slide');
 
 $(document).on("deck.change", function() {
-  console.log("here");
+  $(".deck-container").attr("id", location.hash.slice(1)); 
 });
 
-$(window).on("hashchange.deckhash", function() {
-  console.log(location.hash);
-});
+$(".deck-container").attr("id", location.hash.slice(1) || "intro"); 

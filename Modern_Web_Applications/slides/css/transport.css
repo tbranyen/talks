@@ -12,14 +12,59 @@ article.deck-container {
 
   width: 82%;
 
+  background: url(../img/bob-600-gone.png) no-repeat bottom right;
+
+  -webkit-transition-property: background;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: ease-in;
+}
+
+article.deck-container section {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-box-align: center;
+       -o-box-align: center;
+          box-align: center;
+}
+
+article.deck-container#intro {
   background: url(../img/bob-600.png) no-repeat bottom right;
 }
 
+article.deck-container#about {
+  background: url(../img/bob-600-half.png) no-repeat bottom right;
+}
+
 article.deck-container h1 {
+  color: #444;
   text-align: left;
-  background: rgba(255, 255, 255, .8);
+  display: block;
+  padding: 25px !important;
+}
+
+strong.weak.name {
+  color: #555;
+  padding: 25px;
+  font-size: 20px;
+}
+
+strong.weak {
+  color: #999;
+  padding: 25px;
 }
 
 h3 {
   font-size: 3.4375em !important;
+}
+
+hr.top-spacer {
+  border: none;
+  margin-top: 228px;
+  opacity: .5;
 }
