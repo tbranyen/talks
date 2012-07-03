@@ -12,7 +12,7 @@ article.deck-container {
 
   width: 82%;
 
-  background: url(../img/bob-600-gone.png) no-repeat bottom right;
+  background: url(../img/bob-600-half.png) no-repeat bottom right;
 
   -webkit-transition-property: background;
   -webkit-transition-duration: .5s;
@@ -34,11 +34,11 @@ article.deck-container section {
 }
 
 article.deck-container#intro {
-  background: url(../img/bob-600.png) no-repeat bottom right;
+  background: url(../img/bob-600-full.png) no-repeat bottom right;
 }
 
 article.deck-container#about {
-  background: url(../img/bob-600-half.png) no-repeat bottom right;
+  background: url(../img/bob-600.png) no-repeat bottom right;
 }
 
 article.deck-container h1 {
