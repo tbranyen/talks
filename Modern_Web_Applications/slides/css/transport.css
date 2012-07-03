@@ -1,6 +1,7 @@
 body {
   background: url(../img/dotnoise.png) !important;
   text-align: left;
+  zoom: .9;
 }
 
 article.deck-container {
