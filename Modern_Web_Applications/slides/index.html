@@ -25,9 +25,9 @@
 	<link rel="stylesheet" href="./deck.js/extensions/codemirror/themes/default.css">
 
 	<!-- Theme CSS files (menu swaps these out) -->
+  <link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" id="transition-theme-link" href="./deck.js/themes/transition/horizontal-slide.css">
-	
-	<link rel="stylesheet" href="transport.css">	
+	<link rel="stylesheet" href="css/transport.css">	
 	
 	<script src="./deck.js/modernizr.custom.js"></script>
 </head>
@@ -35,20 +35,12 @@
 <body>
 	<article class="deck-container">
 
-		<section class="slide" id="rules">
-      <img src="img/rules.jpg">
-      <center><h4>~ Tim's Rules ~</h4></center>
+		<section class="slide" id="intro">
+      <h1>Building Modern Web Applications with Backbone Boilerplate</h1>
 		</section>
 
 		<section class="slide" id="my-intro">
-			<h1> tim branyen, work at bocoup <br>& backbone contributor </h1>
-
-      <h3>
-        <ul>
-          <li><a href="http://twitter.com/tbranyen">@tbranyen</a></li>
-          <li><a href="http://talks.tabdeveloper.com/">Other Talks</a></li>
-        </ul>
-      </h3>
+      <h3><a href="http://twitter.com/tbranyen">@tbranyen</a></h3>
 		</section>
 
 		<section class="slide" id="organization">
@@ -128,9 +120,6 @@
       </h3>
 		</section>
 
-		<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-		<a href="#" class="deck-next-link" title="Next">&#8594;</a>
-
 		<p class="deck-status">
 			<span class="deck-status-current"></span>
 			/
@@ -146,20 +135,15 @@
 		<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
 	</article>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
-	<script>window.jQuery || document.write('<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js">\x3C/script>')</script>
+	<script src="js/jquery.js"></script>
 
 	<!-- Deck Core and extensions -->
 	<script src="./deck.js/core/deck.core.js"></script>
-	<script src="./deck.js/extensions/menu/deck.menu.js"></script>
-	<script src="./deck.js/extensions/goto/deck.goto.js"></script>
-	<script src="./deck.js/extensions/status/deck.status.js"></script>
-	<script src="./deck.js/extensions/navigation/deck.navigation.js"></script>
 	<script src="./deck.js/extensions/hash/deck.hash.js"></script>
 	<script src="./deck.js/extensions/codemirror/deck.codemirror.js"></script>
 
 	<!-- Specific to this page -->
-	<script src="transport.js"></script>
+	<script src="js/transport.js"></script>
 
 </body>
 </html>
