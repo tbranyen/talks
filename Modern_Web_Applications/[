@@ -53,10 +53,11 @@
     </div>
   </section>
 
-  <!-- TODO Not happy with this graphic -->
   <section class="slide" id="appvssite">
     <div>
-      <img src="img/site-app.jpg">
+      <h1>Web app vs site</h1>
+
+      <span>Venn diagram here...</span>
     </div>
   </section>
 
@@ -106,12 +107,11 @@
           <h3>Whats done wrong.</h3>
           <ul>
             <li>One big file!
-            <li>No templates (all DOM manip).
-            <li>No separation of domain and presentation.
+            <li>No templates (all DOM manip)!
+            <li>No separation of domain and presentation!
             <li>Completely unmaintainable!
-            <li>No build process and no minification.
-            <li>All custom written besides jQuery.
-            <li>No linting.
+            <li>No build process (no minification).
+            <li>All custom written besides jQuery
           </ul>
         </div>
       </section>
@@ -234,33 +234,6 @@ bbb init:module</code></pre>
     </div>
   </section>
 
-  <section class="slide" id="building">
-    <div>
-      <h2>Building release assets</h2>
-
-      <pre><code># Precompile all templates and concatenate them with all JavaScript
-bbb debug</code></pre>
-
-      <pre><code># Minify
-bbb release</code></pre>
-    </div>
-  </section>
-
-  <section class="slide" id="server">
-    <div>
-      <h2>Running the development server</h2>
-
-      <pre><code># Development
-bbb server</code></pre>
-
-      <pre><code># Build test
-bbb server:debug</code></pre>
-
-      <pre><code># Production test
-bbb server:release</code></pre>
-    </div>
-  </section>
-
   <section class="slide" id="workflow">
     <div>
       <h1>Workflow philosophy</h1>
@@ -279,14 +252,12 @@ bbb server:release</code></pre>
       <h2 class="dim">(El futurino)</h2>
 
       <ul>
-        <li>CSS pre-processor integration (no build step to test)
+        <li>CSS Pre-processor
         <li>Image optimizations
         <li>Deployment process
         <li>Dynamic builds
         <li>Fully integrated modules
         <li>Source maps
-        <li>Seamless package manager integration
-        <li>Internationalization
       </ul>
     </div>
   </section>

@@ -1,7 +1,6 @@
 body {
   background: url(../img/dotnoise.png) !important;
   text-align: left;
-  zoom: .9;
 }
 
 article.deck-container {
@@ -13,12 +12,7 @@ article.deck-container {
 
   width: 82%;
 
-  background: url(../img/bob-600-gone.png) no-repeat bottom right;
   background-size: 20%;
-
-  -webkit-transition-property: background;
-  -webkit-transition-duration: .5s;
-  -webkit-transition-timing-function: ease-in;
 }
 
 article.deck-container section {
@@ -39,12 +33,28 @@ section > div {
   width: 100%;
 }
 
+.center {
+  text-align: center;
+}
+
 article.deck-container#intro {
   background: url(../img/bob-600-full.png) no-repeat bottom right;
+
+  -webkit-transition-property: background;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: ease-in;
 }
 
 article.deck-container#about {
   background: url(../img/bob-600.png) no-repeat bottom right;
+
+  -webkit-transition-property: background;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: ease-in;
+}
+
+article.deck-container#codestyle {
+  background: url(../img/bob-600-gone.png) no-repeat bottom right;
 }
 
 article.deck-container h1 {
@@ -94,12 +104,36 @@ hr {
   opacity: .5;
 }
 
+section.slide.left {
+  height: 0;
+}
+
 section.slide.left.deck-current, section.slide.left.deck-previous {
   width: 50%;
-  position: relative;
+  float: left;
+  height: inherit !important;
 }
 
 section.slide.right.deck-current {
-  float: right;
   width: 50%;
+  float:left;
+}
+
+pre {
+  box-shadow: 10px 10px 0px #DDD;
+}
+
+code, pre {
+  border: none !important;
+  padding: 30px !important;
+  border-radius: 15px;
+}
+
+pre code {
+  font-size: 20px !important;
+  font-family: "DejaVu Sans Mono" !important;
+}
+
+pre code span {
+  padding-left: 0px !important;
 }
