@@ -1,6 +1,8 @@
 body {
   background: url(../img/dotnoise.png) !important;
   text-align: left;
+
+  overflow: hidden !important;
 }
 
 article.deck-container {
