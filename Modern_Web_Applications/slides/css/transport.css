@@ -15,6 +15,11 @@ article.deck-container {
   width: 82%;
 
   background-size: 20%;
+  background: url(../img/bob-600-half.png) no-repeat bottom right;
+
+  -webkit-transition-property: background;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: ease-in;
 }
 
 article.deck-container section {
@@ -41,18 +46,10 @@ section > div {
 
 article.deck-container#intro {
   background: url(../img/bob-600-full.png) no-repeat bottom right;
-
-  -webkit-transition-property: background;
-  -webkit-transition-duration: .5s;
-  -webkit-transition-timing-function: ease-in;
 }
 
 article.deck-container#about {
   background: url(../img/bob-600.png) no-repeat bottom right;
-
-  -webkit-transition-property: background;
-  -webkit-transition-duration: .5s;
-  -webkit-transition-timing-function: ease-in;
 }
 
 article.deck-container#codestyle {
@@ -69,15 +66,29 @@ article.deck-container h1 {
 article.deck-container h2 {
   border: 0 !important;
   padding: 25px !important;
+  margin: 0 !important;
 }
 
 article.deck-container h2.dim {
-  color: #CCC;
+  color: #A6A6A6;
 }
 
 article.deck-container h3 {
   font-size: 32px !important;
   border: 0 !important;
+}
+
+img.bp {
+  float: left;
+  padding-right: 60px;
+}
+
+i {
+  font-style: italic !important;
+}
+
+p.room {
+  margin-bottom: 40px !important;
 }
 
 strong.weak.name {
@@ -90,10 +101,12 @@ strong.weak {
   color: #999;
 }
 
-h1, h2, h3, ul, span, strong {
+h1, h2, h3, ul, ol, p, span, strong {
   padding-left: 25px !important;
 }
 
+p,
+article.deck-container section ol li,
 article.deck-container section ul li {
   font-size: 20px !important;
 }
