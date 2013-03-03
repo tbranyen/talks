@@ -1,0 +1,43 @@
+<header class="secondary">
+  <h1>OCRegister Local</h1>
+  <img src="{{weather_icon}}">
+  <span class="temp">{{temp}}</span>
+</header>
+
+<aside class="community-edition"><h1>{{edition}}</h1></aside>
+
+<aside class="back"><button>Back</button> <h1>Event Details</h1><button class="share">Share</button></aside>
+
+<div class="detail-view">
+  <div class="scroller">
+    <div class="scroller-content">
+      <h1>{{name}}</h1>
+
+      {{#has_gallery}}
+        <div class="gallery-event">
+          <span class="thumbnail">
+            <img src="{{thumbnail}}">
+          </span>
+          <span class="view-gallery">
+            {{count}} images
+          </span>
+        </div>
+      {{/has_gallery}}
+
+      <hgroup>
+        <h2 class="starttime">{{starttime}}</h2>
+        <h2>Event Venue</h2>
+        {{#venue}}
+          <h3>{{name}}</h3>
+          <h3>{{city}}, {{state}}</h3>
+        {{/venue}}
+      </hgroup>
+
+      <br> <br>
+
+      <div class="event">
+        {{{summary}}}
+      </div>
+    </div>
+  </div>
+</div>

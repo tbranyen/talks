@@ -1,0 +1,26 @@
+<div class="scroller">
+  <div class="scroller-contents">
+    <div class="placeholder">Today</div>
+    <ul class="menu">
+      {{#today}}
+      <li class="event today">
+        <div class="content">
+          <p class="title">{{name}}</p>
+          <span class="subtitle">{{starttime}}</span>
+        </div>
+      </li>
+      {{/today}}
+    </ul>
+    <div class="placeholder">Next 7 Days</div>
+    <ul class="menu">
+      {{#next}}
+      <li class="event next">
+        <div class="content">
+          <p class="title">{{name}}</p>
+          <span class="subtitle">{{starttime}}</span>
+        </div>
+      </li>
+      {{/next}}
+    </ul>
+  </div>
+</div>

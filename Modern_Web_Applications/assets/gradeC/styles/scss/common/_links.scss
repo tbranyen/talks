@@ -1,0 +1,11 @@
+a {
+  color: $gray;
+}
+
+a:visited, a:hover {
+  color: $dark-gray;
+}
+
+a:active {
+  color: $light-gray;
+}

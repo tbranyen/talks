@@ -1,0 +1,166 @@
+body {
+  background: url(../img/dotnoise.png) !important;
+  text-align: left;
+
+  overflow: hidden !important;
+}
+
+article.deck-container {
+  position: absolute;
+  top: 32px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: 82%;
+}
+
+article.deck-container section {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-box-align: center;
+       -o-box-align: center;
+          box-align: center;
+}
+
+section > div {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+article.deck-container h1 {
+  color: #444;
+  text-align: left;
+  display: block;
+  padding: 25px !important;
+}
+
+article.deck-container h2 {
+  border: 0 !important;
+  padding: 25px !important;
+  margin: 0 !important;
+}
+
+article.deck-container .dim {
+  color: #A6A6A6;
+}
+
+article.deck-container h3 {
+  font-size: 32px !important;
+  border: 0 !important;
+}
+
+img.bp {
+  float: left;
+  padding-right: 60px;
+}
+
+i {
+  font-style: italic !important;
+}
+
+p.room {
+  margin-bottom: 40px !important;
+}
+
+strong.weak.name {
+  color: #555;
+  padding-left: 25px;
+  font-size: 20px;
+}
+
+strong.weak {
+  color: #999;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 95px;
+  left: 60px;
+}
+
+h1, h2, h3, ul, ol, p, span, strong {
+  padding-left: 25px !important;
+}
+
+p,
+article.deck-container section ol li,
+article.deck-container section ul li {
+  font-size: 24px !important;
+}
+
+h3 {
+  font-size: 3.4375em !important;
+}
+
+hr {
+  opacity: .5;
+}
+
+section.slide.left {
+  height: 330px;
+  float: left;
+
+  display: block;
+}
+
+section.slide.right {
+  height: 0;
+  float: left;
+  display: block;
+}
+
+section.slide.left.deck-next {
+  float: none !important;
+  visibility: hidden !important;
+}
+
+section.slide.right.deck-after {
+  float: none;
+}
+
+section.slide.left.deck-current, section.slide.left.deck-previous {
+  width: 50%;
+  float: left;
+
+  display: block;
+}
+
+section.slide.right.deck-current {
+  width: 50%;
+  float:left;
+}
+
+pre {
+  box-shadow: 10px 10px 0px #DDD;
+}
+
+pre code, pre {
+  border: none !important;
+  padding: 30px !important;
+  border-radius: 15px;
+}
+
+pre code {
+  font-size: 20px !important;
+  font-family: "DejaVu Sans Mono" !important;
+}
+
+pre code span {
+  padding-left: 0px !important;
+}
+
+li.em span {
+  background-color: #F8E2FF;
+  padding: 0 !important;
+  margin: 0;
+}

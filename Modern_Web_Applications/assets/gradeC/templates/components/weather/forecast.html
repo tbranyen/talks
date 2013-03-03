@@ -1,0 +1,23 @@
+<header class="secondary">
+  <h1>OCRegister Local</h1>
+</header>
+
+<aside class="community-edition"><h1>{{edition}}</h1></aside>
+<aside class="back"><button>Back</button> <h1>Weather</h1></aside>
+
+<div class="forecast">
+  <h2>Current Weather</h2>
+  <ul>
+      <li>HI: {{high}}</li>
+      <li>LO: {{low}}</li>
+  </ul>
+  <h1><img src="{{thumbnail}}">{{current_temp}}</h1>
+  <br>
+  <dl>
+    {{#forecast}}
+      <dt><img src="{{thumbnail}}">{{day}}</dt>
+      <dd>{{high}} / {{low}}</dd>
+      <div style="clear: both;"></div>
+    {{/forecast}}
+  </dl>
+</div>

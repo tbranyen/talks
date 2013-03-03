@@ -1,0 +1,11 @@
+{
+  "name": "oc",
+  "version": "0.0.1",
+  "description": "brightcove app cloud oc application",
+  "author": "Tim Branyen <tim@bocoup.com>",
+  "dependencies": {
+    "uglify-js": "*",
+    "mustache": "*"
+  },
+  "engines": { "node": "*" }
+}

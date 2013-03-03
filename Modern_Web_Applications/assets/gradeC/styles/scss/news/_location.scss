@@ -1,0 +1,40 @@
+@mixin location {
+  #location_page {
+    background-color: $dark-gray;
+    text-align: center;
+
+    h1 {
+      font-size: 2em;
+      color: $white;
+      margin-top: 120px;
+      margin-bottom: 20px;
+    }
+
+    select {
+      width: 100%;
+    }
+  }
+
+  #seeking_page {
+    background-color: $dark-gray;
+    text-align: center;
+
+    h1 {
+      font-size: 24px;
+      color: $white;
+      margin-top: 120px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      margin-top: 20px;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 14px;
+      color: $white;
+      margin-top: 20px;
+    }
+  }
+}

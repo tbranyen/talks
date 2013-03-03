@@ -23,30 +23,18 @@
       <h1>Who Am I?</h1>
 
       <ul>
-        <li>Senior Software Engineer at Bocoup
+        <li>Tim Branyen
+        <li>Open Source Developer at Matchbox
         <li>Backbone.js contributor
         <li>Backbone Boilerplate, LayoutManager, and use.js
       </ul>
       <hr>
-      <ul >
+      <ul>
         <li>Skydiver
         <li>Rock climber
       </ul>
 
-      <h3 class="dim bottom">@tbranyen</h3>
-    </div>
-  </section>
-
-  <section class="slide" id="codestyle">
-    <div>
-      <h1>Code style</h1>
-
-      <ul>
-        <li>JavaScript not CoffeeScript
-        <li>2 space soft tabs
-        <li>Strict 80 columns
-        <li>Multiple var, semicolons, double quotes, and comma last
-      </ul>
+      <h3 class="dim bottom">Follow me on Twitter & GitHub: @tbranyen</h3>
     </div>
   </section>
 
@@ -98,13 +86,13 @@
   <section class="slide" id="grading-dev">
     <div>
       <h1>Grading development platforms</h1>
-      <h2 class="dim">GDP</h2>
+      <h2 class="dim">Evolution of my development process</h2>
     </div>
   </section>
 
   <section class="slide" id="gradeF">
     <div>
-      <h1>Grade F</h1>
+      <h1>Grade ★</h1>
       <h2 class="dim">(Circa 2009)</h2>
 
       <section class="slide left">
@@ -124,7 +112,6 @@
           <ul>
             <li>One big file!
             <li>No templates (all DOM manip).
-            <li>No separation of domain and presentation.
             <li>No module system.
             <li>No code structure library.
             <li>Completely unmaintainable!
@@ -138,7 +125,7 @@
 
   <section class="slide" id="gradeD">
     <div>
-      <h1>Grade D</h1>
+      <h1>Grade ★★</h1>
       <h2 class="dim">(Circa 2010)</h2>
 
       <section class="slide left">
@@ -157,7 +144,6 @@
           <h3>Whats done wrong.</h3>
           <ul>
             <li>No templates (all DOM manip).
-            <li>No separation of domain and presentation.
             <li>No code structure library.
             <li>No module system.
             <li>No concatenation, minification, or linting.
@@ -169,7 +155,7 @@
 
   <section class="slide" id="gradeC">
     <div>
-      <h1>Grade C</h1>
+      <h1>Grade ★★★</h1>
       <h2 class="dim">(Circa 2011)</h2>
 
       <section class="slide left">
@@ -180,7 +166,6 @@
             <li>Shared namespace.
             <li>Custom code structure library.
             <li>Leveraging plugins and several libraries.
-            <li>Separation of the domain data and the presentation.
             <li>Mustache templates in separate files.
             <li>Full build process with: concatenation, minification, and
               linting.
@@ -199,7 +184,7 @@
 
   <section class="slide" id="why-c">
     <div>
-      <h1>If everything was done right, why a C?</h1>
+      <h1>If everything was done right, why ★★★?</h1>
       <h2 class="dim">I'm a tough critic</h2>
     </div>
   </section>
@@ -241,7 +226,7 @@
 
   <section class="slide" id="gradeB">
     <div>
-      <h1>Grade B</h1>
+      <h1>Grade ★★★★</h1>
       <h2 class="dim">(Circa 2012)</h2>
 
       <section class="slide left">
@@ -286,7 +271,6 @@
       <p class="room"><i>A set of best practices and utilities for building Backbone.js applications.</i></p>
       <p class="room"><a href="https://github.com/tbranyen/backbone-boilerplate">https://github.com/tbranyen/backbone-boilerplate</a></p>
       <p><i>Build tool is a separate project called grunt-bbb<br> [B]ackbone [B]oilerplate [B]uild.</i></p>
-      <p class="room"><a href="https://github.com/backbone-boilerplate/grunt-bbb">https://github.com/backbone-boilerplate/grunt-bbb</a></p>
     </div>
   </section>
 
@@ -315,10 +299,10 @@
   <section class="slide" id="grunt-bbb">
     <div>
       <h1>bbb</h1>
+      <h2 class="dim"><a href="https://github.com/backbone-boilerplate/grunt-bbb">https://github.com/backbone-boilerplate/grunt-bbb</a></h2>
 
       <ul>
         <li>Complement to backbone-boilerplate, the scaffolding and build tool
-        <li>Built on top of Grunt
         <li>Internally uses grunt-contrib and grunt-jasmine-task
       </ul>
     </div>
@@ -331,7 +315,7 @@
       <ul>
         <li>Backbone.js configured with sensible defaults
         <li>View management via LayoutManager
-        <li>AMD via RequireJS
+        <li>AMD via RequireJS configured to work out-of-the-box
         <li>Build system via Grunt & BBB
         <li>CSS via H5BP
       </ul>
@@ -345,10 +329,10 @@
       <ul>
         <li>Never re-build during development
         <li>Almost never touch index.html
-        <li>Deployment remaps
+        <li>Server remaps paths to production assets
         <li>Build all source files into as few files as possible
-        <li>Works without a server with minimal effort.
-        <li>Node.js is the only dependency (other than optional PhantomJS)
+        <li>Works without a server with minimal effort
+        <li>Identical workflow in Windows/OS X/Linux
       </ul>
     </div>
   </section>
@@ -371,10 +355,10 @@
     <div>
       <h2 class="dim">Getting started with BBB</h2>
 
-      <pre><code># Get the Boilerplate without the build tool
-git clone https://github.com/tbranyen/backbone-boilerplate</code></pre>
-      <pre><code># Installing BBB
-[sudo] npm install grunt-bbb
+      <!--<pre><code># Get the Boilerplate without the build tool
+git clone https://github.com/tbranyen/backbone-boilerplate</code></pre>-->
+      <pre><code># Install bbb globally
+[sudo] npm install bbb -g
 
 # Create a new project
 bbb init</code></pre>
@@ -390,7 +374,9 @@ bbb init</code></pre>
 │   ├── app.js
 │   ├── config.js
 │   ├── main.js
-│   └── router.js
+│   ├── modules
+│   ├── router.js
+│   └── templates
 ├── assets
 │   ├── css
 │   └── js
@@ -412,10 +398,10 @@ bbb init:module
 
 # Grunt prompt
 Please answer the following:
-[?] Module Name jetpack
+[?] Module Name mymodule
 [?] Do you need to make any changes to the above before continuing? (y/N) n
 
-Writing app/modules/jetpack.js...OK
+Writing app/modules/mymodule.js...OK
 
 Initialized from template "module".</code></pre>
     </div>
@@ -426,10 +412,20 @@ Initialized from template "module".</code></pre>
       <h1>RequireJS (AMD)</h1>
       <h2 class="dim"><a
 href="http://requirejs.com">http://requirejs.com</a></h2>
+
+      <pre><code>// Define someModule
+define([/* optional dependencies */], function() {
+  return { a: 1 };
+});
+
+// Consume someModule
+require(["someModule"], function(someModule) {
+  someModule.a === 1;
+});</code></pre>
     </div>
   </section>
 
-  <section class="slide" id="define">
+  <!--<section class="slide" id="define">
     <div>
       <h2 class="dim">Inspecting the module</h2>
       <pre><code>define([
@@ -450,7 +446,7 @@ function(app) {
 
 });</code></pre>
     </div>
-  </section>
+  </section>-->
 
   <section class="slide" id="lm">
     <div>
@@ -460,7 +456,7 @@ href="http://github.com/tbranyen/backbone.layoutmanager">http://github.com/tbran
     </div>
   </section>
 
-  <section class="slide" id="templates">
+  <!--<section class="slide" id="templates">
     <div>
       <h2 class="dim">Creating templates/layouts</h2>
 
@@ -476,7 +472,7 @@ touch app/templates/layouts/main.html
 # Create new template
 touch app/templates/jetpack/header.html</code></pre>
     </div>
-  </section>
+  </section>-->
 
   <section class="slide" id="layout">
     <div>
@@ -492,7 +488,7 @@ touch app/templates/jetpack/header.html</code></pre>
       <pre><code class="html">&lt;h1>Page title&lt;/h1></code></pre> </div>
   </section>
 
-  <section class="slide" id="header-compiled">
+  <!--<section class="slide" id="header-compiled">
     <div>
       <h2 class="dim">Template once its compiled</h2>
 
@@ -500,14 +496,14 @@ touch app/templates/jetpack/header.html</code></pre>
 var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('&lt;h1>Page title&lt;/h1>\n');}return __p.join('');
 }(data, _)};</code></pre>
     </div>
-  </section>
+  </section>-->
 
   <section class="slide" id="view">
     <div>
       <h2 class="dim">Creating a View to consume the template</h2>
 
-      <pre><code class="javascript">Jetpack.Views.Header = Backbone.View.extend({
-  template: "jetpack/header"
+      <pre><code class="javascript">MyModule.Views.Header = Backbone.View.extend({
+  template: "mymodule/header"
 });</code></pre>
     </div>
   </section>
@@ -515,8 +511,7 @@ var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.pu
   <section class="slide" id="use-layout">
     <div>
       <h2 class="dim">useLayout function</h2>
-      <p>Creates a new layout with the template name passed in.  If its the same
-name, will reuse the layout</p>
+      <p>Create or reuse a layout with the template name passed in.</p>
 
       <pre><code class="javascript">app.useLayout(name)
 </code></pre>
@@ -526,36 +521,22 @@ name, will reuse the layout</p>
   <section class="slide" id="router">
     <div>
       <h2 class="dim">Assembling the layout in the Router</h2>
-      <pre><code>define([
-  // Application.
-  "app",
+      <pre><code>// Define the application router.
+var Router = Backbone.Router.extend({
+  routes: {
+    "": "index"
+  },
 
-  // Jetpack
-  "modules/jetpack"
-],
-
-function(app, Jetpack) {
-
-  // Defining the application router, you can attach sub routers here.
-  var Router = Backbone.Router.extend({
-    routes: {
-      "": "index"
-    },
-
-    index: function() {
-      app.useLayout("main").setViews({
-        "header": new Jetpack.Views.Header()
-      }).render();
-    },
-  });
-
-  return Router;
-
+  index: function() {
+    app.useLayout("main").setViews({
+      "header": new MyModule.Views.Header()
+    }).render();
+  },
 });</code></pre>
     </div>
   </section>
 
-  <section class="slide" id="fetch">
+  <!--<section class="slide" id="fetch">
     <div>
       <h2 class="dim">How does it know which template to use?</h2>
       <pre><code>// Localize or create a new JavaScript Template object.
@@ -575,17 +556,16 @@ fetch: function(path) {
   return JST[path];
 }</code></pre>
     </div>
-  </section>
+  </section>-->
 
   <section class="slide" id="css">
     <div>
       <h1>How is CSS handled?</h1>
       
       <ul>
-        <li>No pre-processor yet, unfortunately
-        <li>index.css is the only stylesheet loaded
-        <li>Contains @imports
-        <li>Build process takes specific CSS and compiles them into new index.css
+        <li>CSS pre-processor (Stylus)
+        <li>Server rendered based off <code>.styl</code> extension
+        <li>Watch task if you don't use the server
       </ul>
   </section>
 
@@ -596,12 +576,12 @@ fetch: function(path) {
         <li>Lint source
         <li>Precompile all templates
         <li>Build all modules into a single file
-        <li>Concatenate Almond - Templates - Source
-        <li>Minify source and CSS.
+        <li>Concatenate Templates and JavaScript into one file
+        <li>Minify JavaScript and CSS
       </ul>
   </section>
 
-  <section class="slide" id="almond">
+  <!--<section class="slide" id="almond">
     <div>
       <h1>Almond</h1>
       <h2 class="dim"><a href="https://github.com/jrburke/almond">https://github.com/jrburke/almond</a></h2>
@@ -609,7 +589,7 @@ fetch: function(path) {
         <li>Very lightweight shim for RequireJS
         <li>Only works with compiled assets (no lazy load)
       </ul>
-  </section>
+  </section>-->
 
   <section class="slide" id="building">
     <div>
@@ -647,7 +627,7 @@ bbb server:release</code></pre>
     </div>
   </section>
 
-  <section class="slide" id="deployment">
+  <!--<section class="slide" id="deployment">
     <div>
       <h2 class="dim">Example nginx configuration</h2>
 
@@ -672,7 +652,7 @@ bbb server:release</code></pre>
   }
 }</code></pre>
     </div>
-  </section>
+  </section>-->
 
   <section class="slide" id="others">
     <div>
@@ -682,18 +662,17 @@ bbb server:release</code></pre>
         <li><a href="http://brunch.io">brunch.io</a> (Custom)
         <li><a href="http://yeoman.io">yeoman.io</a> (Grunt) - not released
         <li>Not tied to any specific code structure library
-        <li>Both are good, but not Grade A
+        <li>Both are good, but not Grade ★★★★★
       </ul>
     </div>
   </section>
 
   <section class="slide" id="gradeA">
     <div>
-      <h1>Grade A</h1>
-      <h2 class="dim">(El futurino)</h2>
+      <h1>Grade ★★★★★</h1>
+      <h2 class="dim">(The Future)</h2>
 
       <ul>
-        <li>CSS pre-processor integration (no build step to test)
         <li>Image optimizations
         <li>Deployment process
         <li>Dynamic builds
@@ -708,8 +687,8 @@ bbb server:release</code></pre>
 
   <section class="slide" id="missy-pants">
     <div>
-      <h2 class="center">Questions!</h2>
-      <img src="img/missypants.jpg">
+      <h1 style="text-align: center">Questions!</h1>
+      <!--<img src="img/missypants.jpg">-->
     </div>
   </section>
 

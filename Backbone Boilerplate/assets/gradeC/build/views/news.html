@@ -1,0 +1,83 @@
+<!doctype html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7" manifest="default.appcache?v=1"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>News - OCRegister Local</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="cleartype" content="on">
+  
+  <!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="img/l/splash.png">-->
+
+{{{ stylesheets }}}
+</head>
+
+<body id="news">
+  <div id="container">
+
+    <!-- Home -->
+    <div id="home_page" class="page">
+      <header class="primary">
+        <h1>OCRegister Local</h1>
+        <span class="change-edition">Change Edition</span>
+      </header>
+
+      <aside class="community-edition"><h1>Community Edition Name</h1></aside>
+
+      <section id="weather-component" data-view="home" data-bc-component-type="WeatherComponent"> </section>
+
+      <section id="photo-component" data-view="home" data-bc-component-type="PhotoComponent">
+        <div class="latest">
+          <h1>Latest Photo Galleries</h1>
+        </div>
+
+        <div class="carousel"> </div>
+      </section>
+
+      <section id="news-component" data-view="categories" data-bc-component-type="NewsComponent">
+        <p>
+          <img alt="Loading" src="../img/loading.gif">
+          <strong>Loading news...</strong>
+        </p>
+      </section>
+    </div>
+    <!-- /Home -->
+
+    <!-- Seek Location -->
+    <div id="seeking_page" class="page">
+      <div class="loading">
+        <h1>OCRegister Local</h1>
+        <img src="../img/loading-dark.gif">
+        <h2>Determining your location...</h2>
+      </div>
+    </div>
+    <!-- /Seek Location -->
+
+    <!-- Location -->
+    <div id="location_page" class="page page-active">
+      <h1>OCRegister Local</h1>
+
+      <button class="w66 reset">Reset Cache</button>
+      <button class="w66 find-location">Find my Location</button>
+      <br><br>
+      <select id="location" class="w66">
+        <option>Select a location:</option>
+      </select>
+    </div>
+    <!-- /Location -->
+
+  </div>
+
+{{{ scripts }}}
+</body>
+</html>

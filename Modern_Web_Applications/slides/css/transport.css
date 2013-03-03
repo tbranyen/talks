@@ -13,13 +13,6 @@ article.deck-container {
   right: 0;
 
   width: 82%;
-
-  background-size: 20%;
-  background: url(../img/bob-600-half.png) no-repeat bottom right;
-
-  -webkit-transition-property: background;
-  -webkit-transition-duration: .5s;
-  -webkit-transition-timing-function: ease-in;
 }
 
 article.deck-container section {
@@ -42,18 +35,6 @@ section > div {
 
 .center {
   text-align: center;
-}
-
-article.deck-container#intro {
-  background: url(../img/bob-600-full.png) no-repeat bottom right;
-}
-
-article.deck-container#about {
-  background: url(../img/bob-600.png) no-repeat bottom right;
-}
-
-article.deck-container#codestyle {
-  background: url(../img/bob-600-gone.png) no-repeat bottom right;
 }
 
 article.deck-container h1 {
@@ -114,7 +95,7 @@ h1, h2, h3, ul, ol, p, span, strong {
 p,
 article.deck-container section ol li,
 article.deck-container section ul li {
-  font-size: 20px !important;
+  font-size: 24px !important;
 }
 
 h3 {
@@ -126,13 +107,32 @@ hr {
 }
 
 section.slide.left {
+  height: 330px;
+  float: left;
+
+  display: block;
+}
+
+section.slide.right {
   height: 0;
+  float: left;
+  display: block;
+}
+
+section.slide.left.deck-next {
+  float: none !important;
+  visibility: hidden !important;
+}
+
+section.slide.right.deck-after {
+  float: none;
 }
 
 section.slide.left.deck-current, section.slide.left.deck-previous {
   width: 50%;
   float: left;
-  height: inherit !important;
+
+  display: block;
 }
 
 section.slide.right.deck-current {
@@ -144,7 +144,7 @@ pre {
   box-shadow: 10px 10px 0px #DDD;
 }
 
-code, pre {
+pre code, pre {
   border: none !important;
   padding: 30px !important;
   border-radius: 15px;

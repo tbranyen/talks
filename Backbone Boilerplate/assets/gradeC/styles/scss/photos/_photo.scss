@@ -1,0 +1,20 @@
+@mixin photo {
+  .photo-full {
+    overflow: hidden;
+    top: 0; bottom: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .photo-text {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 100px;
+    background-color: $dark-gray;
+    opacity: .7;
+    color: white;
+  }
+}

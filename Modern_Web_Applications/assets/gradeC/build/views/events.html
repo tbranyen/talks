@@ -1,0 +1,50 @@
+<!doctype html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7" manifest="default.appcache?v=1"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Events - OCRegister Local</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> <meta http-equiv="cleartype" content="on">
+  
+  <!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="img/l/splash.png">-->
+
+{{{ stylesheets }}}
+</head>
+
+<body class="events">
+  <div id="container">
+
+    <!-- Events -->
+    <div id="events_page" class="page">
+      <header class="secondary">
+        <h1>OCRegister Local</h1>
+        <section id="weather-component" data-view="header" data-bc-component-type="WeatherComponent"></section>
+      </header>
+
+      <section id="event-component" data-view="events" data-bc-component-type="EventComponent">
+        <p>
+          <img alt="Loading" src="../img/loading.gif">
+          <strong>Loading events...</strong>
+        </p>
+      </section>
+
+      <section id="photo-component" data-view="home" data-bc-component-type="PhotoComponent"></section>
+    </div>
+    <!-- /Events -->
+
+  </div>
+
+{{{ scripts }}}
+</body>
+</html>
+

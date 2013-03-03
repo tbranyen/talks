@@ -12,33 +12,6 @@
   <script type="text/javascript" src="preso/sh/scripts/shAutoloader.js"></script>
   <script type="text/javascript" src="preso/js/dzslides.js"></script>
   <script type="text/javascript" src="preso/js/custom.js"></script>
-  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
-  <script src="http://sync.tabdeveloper.com/socket.io/socket.io.js"></script> 
-  <script type="text/javascript">
-    jQuery(function($) {
-      var sync_on = true
-        , sync_button = $(".sync-button").bind('click', function() {
-            sync_on = !sync_on;
-            sync_button.attr('value', sync_on ? 'Turn Sync Off' : 'Turn Sync On');
-          });
-        
-      var socket = new io.Socket('sync.tabdeveloper.com', {
-        port: 1234
-      });
-      socket.connect();
-      socket.on('message', function(e) {
-        if(sync_on && e.state) {
-          location.hash = e.state;
-        }
-        if(e.cornify) {
-          cornify_add();
-        }
-        if(e.refresh) {
-          location.reload(true);
-        }
-      });
-    });
-  </script>
 
   <style>
     dt {

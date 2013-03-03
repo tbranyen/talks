@@ -1,0 +1,17 @@
+@mixin gallery {
+  .photo {
+    display: inline;
+
+    .thumbnail {
+      margin: 4px;
+      width: 45px;
+      height: 45px;
+      overflow: hidden;
+      display: inline-block;
+
+      img {
+        width: 75px;
+      }
+    }
+  }
+}

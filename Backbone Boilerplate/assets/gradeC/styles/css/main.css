@@ -1,0 +1,323 @@
+@import url(brightcove/brightcove-app-cloud.css);
+.w66 {
+  width: 66% !important; }
+
+button {
+  -webkit-box-shadow: 1px 1px 1px #fff;
+  -webkit-border-radius: 0.5em;
+  outline-color: #57585a;
+  font-size: 15px;
+  font-color: #3e3e3f;
+  border: 1px solid #3e3e3f;
+  padding: 0.5em;
+  line-height: 1.2em;
+  display: inline-block; }
+
+select {
+  -webkit-box-shadow: 1px 1px 1px #fff;
+  -webkit-border-radius: 0.5em;
+  outline-color: #57585a;
+  font-size: 15px;
+  font-color: #3e3e3f;
+  border: 1px solid #3e3e3f;
+  padding: 0.5em;
+  line-height: 1.2em;
+  display: inline-block; }
+
+a {
+  color: #57585a; }
+
+a:visited, a:hover {
+  color: #3e3e3f; }
+
+a:active {
+  color: #d1d2d4; }
+
+header.primary {
+  height: 50px;
+  background: #57585a;
+  position: relative;
+  color: white; }
+  header.primary h1 {
+    font-size: 1.5em;
+    line-height: 50px;
+    padding-left: 20px; }
+  header.primary .change-edition {
+    position: absolute;
+    top: 19px;
+    right: 15px; }
+
+header.secondary {
+  height: 50px;
+  background: #57585a;
+  position: relative;
+  color: white; }
+  header.secondary h1 {
+    font-size: 1.5em;
+    line-height: 50px;
+    padding-left: 20px; }
+  header.secondary img {
+    position: absolute;
+    top: 5px;
+    right: 35px; }
+  header.secondary .temp {
+    position: absolute;
+    top: 10px;
+    right: 5px; }
+  header.secondary .change-edition {
+    position: absolute;
+    top: 19px;
+    right: 15px; }
+
+.community-edition {
+  height: 35px;
+  background: #686566; }
+  .community-edition h1 {
+    font-size: 21px;
+    line-height: 35px;
+    padding-left: 20px;
+    color: white; }
+
+.back {
+  background-color: #787878;
+  color: white;
+  position: relative;
+  height: 55px;
+  text-align: center; }
+  .back button {
+    position: absolute;
+    left: 10px;
+    top: 5px; }
+  .back button.share {
+    right: 10px;
+    left: auto; }
+  .back h1 {
+    font-size: 18px;
+    line-height: 55px;
+    padding-left: 20px;
+    color: white; }
+
+ul.menu {
+  list-style: none;
+  margin: 0;
+  background-color: white; }
+  ul.menu li {
+    height: 60px;
+    border-bottom: 2px solid #d1d2d4;
+    position: relative;
+    padding-left: 10px; }
+    ul.menu li span.thumbnail {
+      width: 50px;
+      height: 35px;
+      overflow: hidden;
+      float: left;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-right: 12px; }
+      ul.menu li span.thumbnail .default-thumbnail {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-color: #57585a; }
+      ul.menu li span.thumbnail img {
+        width: 50px; }
+    ul.menu li div.content {
+      width: 100%;
+      height: 60px; }
+      ul.menu li div.content .title {
+        font-size: 21px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-top: 15px;
+        text-overflow: clip;
+        text-overflow: ellipsis;
+        text-overflow: ellipsis-word; }
+      ul.menu li div.content .subtitle {
+        text-align: left;
+        font-size: 14px; }
+
+#news #loading_page, #news-component #loading_page, #news_page #loading_page {
+  background-color: #dad8bd;
+  text-align: center; }
+  #news #loading_page img, #news-component #loading_page img, #news_page #loading_page img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+#news #location_page, #news-component #location_page, #news_page #location_page {
+  background-color: #3e3e3f;
+  text-align: center; }
+  #news #location_page h1, #news-component #location_page h1, #news_page #location_page h1 {
+    font-size: 2em;
+    color: white;
+    margin-top: 120px;
+    margin-bottom: 20px; }
+  #news #location_page select, #news-component #location_page select, #news_page #location_page select {
+    width: 100%; }
+#news #seeking_page, #news-component #seeking_page, #news_page #seeking_page {
+  background-color: #3e3e3f;
+  text-align: center; }
+  #news #seeking_page h1, #news-component #seeking_page h1, #news_page #seeking_page h1 {
+    font-size: 24px;
+    color: white;
+    margin-top: 120px;
+    margin-bottom: 20px; }
+  #news #seeking_page img, #news-component #seeking_page img, #news_page #seeking_page img {
+    margin-top: 20px;
+    position: relative; }
+  #news #seeking_page h2, #news-component #seeking_page h2, #news_page #seeking_page h2 {
+    font-size: 14px;
+    color: white;
+    margin-top: 20px; }
+#news .gallery-article .thumbnail, #news-component .gallery-article .thumbnail, #news_page .gallery-article .thumbnail {
+  width: 45px;
+  height: 30px;
+  overflow: hidden; }
+
+#weather[data-view=home], #weather-component[data-view=home], #weather_page[data-view=home] {
+  height: 75px;
+  background: #808286;
+  position: relative;
+  padding-left: 14px; }
+  #weather[data-view=home] h2, #weather-component[data-view=home] h2, #weather_page[data-view=home] h2 {
+    text-transform: uppercase;
+    padding: 5px; }
+  #weather[data-view=home] ul, #weather-component[data-view=home] ul, #weather_page[data-view=home] ul {
+    padding: 5px; }
+    #weather[data-view=home] ul li, #weather-component[data-view=home] ul li, #weather_page[data-view=home] ul li {
+      list-style: none; }
+  #weather[data-view=home] h1, #weather-component[data-view=home] h1, #weather_page[data-view=home] h1 {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: white;
+    font-size: 24px;
+    text-shadow: #3e3e3f 1px 1px 0px; }
+    #weather[data-view=home] h1 img, #weather-component[data-view=home] h1 img, #weather_page[data-view=home] h1 img {
+      margin-top: 10px;
+      margin-right: 10px; }
+  #weather[data-view=home] .i, #weather-component[data-view=home] .i, #weather_page[data-view=home] .i {
+    border-color: white;
+    border-radius: 14px 14px 14px 14px;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+    padding: 2px;
+    padding-bottom: 6px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    width: 14px;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    right: 10px; }
+#weather .forecast, #weather-component .forecast, #weather_page .forecast {
+  position: relative;
+  padding: 20px; }
+  #weather .forecast h2, #weather-component .forecast h2, #weather_page .forecast h2 {
+    text-transform: uppercase;
+    padding: 5px; }
+  #weather .forecast ul, #weather-component .forecast ul, #weather_page .forecast ul {
+    padding: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  #weather .forecast h1, #weather-component .forecast h1, #weather_page .forecast h1 {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    color: #57585a;
+    font-size: 24px;
+    text-shadow: #3e3e3f 1px 1px 0px; }
+  #weather .forecast dl, #weather-component .forecast dl, #weather_page .forecast dl {
+    width: 100%; }
+    #weather .forecast dl dt, #weather-component .forecast dl dt, #weather_page .forecast dl dt {
+      float: left;
+      margin-bottom: 5px; }
+      #weather .forecast dl dt img, #weather-component .forecast dl dt img, #weather_page .forecast dl dt img {
+        width: 13px;
+        padding-right: 4px; }
+    #weather .forecast dl dd, #weather-component .forecast dl dd, #weather_page .forecast dl dd {
+      float: right; }
+
+#photo-component[data-view=home] .latest, #photo_page[data-view=home] .latest, #gallery_page[data-view=home] .latest {
+  height: 30px;
+  background-color: #57585a; }
+  #photo-component[data-view=home] .latest h1, #photo_page[data-view=home] .latest h1, #gallery_page[data-view=home] .latest h1 {
+    line-height: 30px;
+    padding-left: 20px;
+    color: white; }
+#photo-component[data-view=home] .carousel, #photo_page[data-view=home] .carousel, #gallery_page[data-view=home] .carousel {
+  text-align: center;
+  height: 75px;
+  background-color: #3e3e3f;
+  white-space: nowrap; }
+  #photo-component[data-view=home] .carousel ul, #photo_page[data-view=home] .carousel ul, #gallery_page[data-view=home] .carousel ul {
+    list-style: none;
+    margin: 0;
+    margin-left: 7px; }
+    #photo-component[data-view=home] .carousel ul li ul li, #photo_page[data-view=home] .carousel ul li ul li, #gallery_page[data-view=home] .carousel ul li ul li {
+      display: inline-block;
+      width: 59px;
+      height: 45px;
+      overflow: hidden;
+      margin: 8px;
+      margin-left: 4px;
+      border-radius: 5px; }
+      #photo-component[data-view=home] .carousel ul li ul li .icon img, #photo_page[data-view=home] .carousel ul li ul li .icon img, #gallery_page[data-view=home] .carousel ul li ul li .icon img {
+        height: 75px;
+        margin-top: -4px; }
+#photo-component[data-view=home] .pager, #photo_page[data-view=home] .pager, #gallery_page[data-view=home] .pager {
+  margin-top: -10px; }
+  #photo-component[data-view=home] .pager a, #photo_page[data-view=home] .pager a, #gallery_page[data-view=home] .pager a {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #57585a;
+    margin: 5px;
+    text-indent: -3000px; }
+  #photo-component[data-view=home] .pager a.activeSlide, #photo_page[data-view=home] .pager a.activeSlide, #gallery_page[data-view=home] .pager a.activeSlide {
+    background-color: white; }
+#photo-component .gallery .photo, #photo_page .gallery .photo, #gallery_page .gallery .photo {
+  display: inline; }
+  #photo-component .gallery .photo .thumbnail, #photo_page .gallery .photo .thumbnail, #gallery_page .gallery .photo .thumbnail {
+    margin: 4px;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    display: inline-block; }
+    #photo-component .gallery .photo .thumbnail img, #photo_page .gallery .photo .thumbnail img, #gallery_page .gallery .photo .thumbnail img {
+      width: 75px; }
+#photo-component .photo-full, #photo_page .photo-full, #gallery_page .photo-full {
+  overflow: hidden;
+  top: 0;
+  bottom: 0; }
+  #photo-component .photo-full img, #photo_page .photo-full img, #gallery_page .photo-full img {
+    width: 100%; }
+#photo-component .photo-text, #photo_page .photo-text, #gallery_page .photo-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: #3e3e3f;
+  opacity: .7;
+  color: white; }
+
+#event-component .detail-view, #detail_page .detail-view {
+  padding: 20px;
+  padding: 20px; }
+  #event-component .detail-view .starttime, #detail_page .detail-view .starttime {
+    margin-bottom: 10px; }
+  #event-component .detail-view h3, #detail_page .detail-view h3 {
+    font-weight: normal; }
+#event-component .placeholder, #detail_page .placeholder {
+  background-color: #d1d2d4;
+  padding: 10px; }
+
+.share {
+  display: none; }

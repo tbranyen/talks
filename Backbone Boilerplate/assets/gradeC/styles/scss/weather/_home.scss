@@ -1,0 +1,55 @@
+@mixin home {
+  height: 75px;
+  background: $medium-gray;
+  position: relative;
+  padding-left: 14px;
+
+  h2 {
+    text-transform: uppercase;
+    padding: 5px;
+  }
+
+  ul {
+    padding: 5px;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  h1 {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    color: $white;
+    font-size: 24px;
+    text-shadow: $dark-gray 1px 1px 0px;
+
+    img {
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  .i {
+    border-color: white;
+    border-radius: 14px 14px 14px 14px;
+    border-style: solid;
+    border-width: 2px;
+
+    text-align: center;
+    padding: 2px;
+    padding-bottom: 6px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    
+    width: 14px;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+<header class="secondary">
+  <h1>OCRegister Local</h1>
+  <img src="{{weather_icon}}">
+  <span class="temp">{{temp}}</span>
+</header>
+
+<aside class="community-edition"><h1>{{edition}}</h1></aside>
+
+<aside class="back"><button>Back</button></aside>
+
+<div class="gallery">
+  <section class="scroller">
+    <ul>
+      {{#media_content}}
+        {{#url}}
+        <li class="photo">
+          <span class="thumbnail"><img src="{{url}}"></span>
+        </li>
+        {{/url}}
+      {{/media_content}}
+    </ul>
+  </section>
+</div>

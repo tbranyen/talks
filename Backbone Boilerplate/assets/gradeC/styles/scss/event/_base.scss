@@ -1,0 +1,13 @@
+@import "detail";
+
+#event-component, #detail_page {
+  .detail-view {
+    padding: 20px;
+    @include detail;
+  }
+
+  .placeholder {
+    background-color: $light-gray;
+    padding: 10px;
+  }
+}

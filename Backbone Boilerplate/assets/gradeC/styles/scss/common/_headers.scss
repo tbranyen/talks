@@ -1,0 +1,93 @@
+header.primary {
+  height: 50px;
+  background: $gray;
+  position: relative;
+
+  color: $white;
+
+  h1 {
+    font-size: 1.5em;
+    line-height: 50px;
+    padding-left: 20px;
+  }
+
+  .change-edition {
+    position: absolute;
+    top: 19px;
+    right: 15px;
+  }
+}
+
+header.secondary {
+  height: 50px;
+  background: $gray;
+  position: relative;
+
+  color: $white;
+
+  h1 {
+    font-size: 1.5em;
+    line-height: 50px;
+    padding-left: 20px;
+  }
+
+  img {
+    position: absolute;
+    top: 5px;
+    right: 35px;
+  }
+
+  .temp {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+  }
+
+  .change-edition {
+    position: absolute;
+    top: 19px;
+    right: 15px;
+  }
+}
+
+.community-edition {
+  height: 35px;
+  background: $gray-2;
+
+  h1 {
+    font-size: 21px;
+    line-height: 35px;
+    padding-left: 20px;
+
+    color: $white;
+  }
+}
+
+.back {
+  background-color: $gray-3;
+  color: $white;
+  position: relative;
+  height: 55px;
+
+  text-align: center;
+
+  button {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+  }
+
+  button.share {
+    right: 10px;
+    left: auto;
+  }
+
+  h1 {
+    font-size: 18px;
+    line-height: 55px;
+    padding-left: 20px;
+
+    color: $white;
+  }
+}
+

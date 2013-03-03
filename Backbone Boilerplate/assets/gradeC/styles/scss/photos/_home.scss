@@ -1,0 +1,65 @@
+@mixin home {
+  .latest {
+    height: 30px;
+    background-color: $gray;
+
+    h1 {
+      line-height: 30px;
+      padding-left: 20px;
+      color: $white;
+    }
+  }
+
+  .carousel {
+    text-align: center;
+    height: 75px;
+    background-color: $dark-gray;
+    white-space: nowrap;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      margin-left: 7px;
+
+      li {
+
+        ul {
+          li {
+            display: inline-block;
+            width: 59px;
+            height: 45px;
+            overflow: hidden;
+            margin: 8px;
+            margin-left: 4px;
+            border-radius: 5px;
+
+            .icon img {
+              height: 75px;
+              margin-top: -4px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  .pager {
+    margin-top: -10px;
+
+    a {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      overflow: hidden;
+      border-radius: 10px;
+      background-color: $gray;
+      margin: 5px;
+      text-indent: -3000px;
+    }
+
+    a.activeSlide {
+      background-color: $white;
+    }
+  }
+}

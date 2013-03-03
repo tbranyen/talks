@@ -1,0 +1,78 @@
+<!doctype html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7" manifest="default.appcache?v=1"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>More - OCRegister Local</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> <meta http-equiv="cleartype" content="on">
+  
+  <!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="img/l/splash.png">-->
+
+{{{ stylesheets }}}
+</head>
+
+<body class="more">
+  <div id="container">
+
+    <!-- More -->
+    <div id="more_page" class="page">
+      <header class="secondary">
+        <h1>OCRegister Local</h1>
+        <section id="weather-component" data-view="header" data-bc-component-type="WeatherComponent"></section>
+      </header>
+
+      <section id="more-component" data-view="list" data-bc-component-type="MoreComponent"></section>
+    </div>
+    <!-- /More -->
+
+    <!-- Videos -->
+    <div id="video-page" class="page">
+      <header class="secondary">
+        <h1>OCRegister Local</h1>
+        <span class="temp"></span>
+        <img class="weather-thumbnail" src="#"> 
+      </header>
+      <aside class="community-edition"><h1>{{edition}}</h1></aside>
+      <aside class="back"><button>Back</button> <h1>Videos</h1></aside>
+
+      <section id="video-component" data-view="videos" data-bc-component-type="VideoComponent">
+        <p>
+          <img alt="Loading" src="../img/loading.gif">
+          <strong>Loading videos...</strong>
+        </p>
+      </section>
+    </div>
+    <!-- /Videos -->
+
+    <!-- Photos -->
+    <div id="photos-page" class="page">
+      <header class="secondary">
+        <h1>OCRegister Local</h1>
+        <span class="temp"></span>
+        <img class="weather-thumbnail" src="#"> 
+      </header>
+      <aside class="community-edition"><h1>{{edition}}</h1></aside>
+      <aside class="back"><button>Back</button> <h1>Photos</h1></aside>
+
+      <section id="photo-component" data-view="galleries" data-bc-component-type="PhotoComponent">
+        <p>
+          <img alt="Loading" src="../img/loading.gif">
+          <strong>Loading photos...</strong>
+        </p>
+      </section>
+    </div>
+    <!-- /Photos -->
+
+{{{ scripts }}}
+</body>
+</html>

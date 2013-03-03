@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+  <name>OC</name>
+  <description>OC Portal</description>
+  <devices>
+    <device name='iPhone'></device>
+  </devices>
+  <views>
+    <view>
+      <navigationTitle>News</navigationTitle>
+      <navigationIcon>images/icons/news.png</navigationIcon>
+      <uri>.views/news.html</uri>
+    </view>
+    <view>
+      <navigationTitle>Events</navigationTitle>
+      <navigationIcon>images/icons/events.png</navigationIcon>
+      <uri>.views/events.html</uri>
+    </view>
+    <view>
+      <navigationTitle>Directory</navigationTitle>
+      <navigationIcon>images/icons/photos.png</navigationIcon>
+      <uri>.views/photos.html</uri>
+    </view>
+    <view>
+      <navigationTitle>More</navigationTitle>
+      <navigationIcon>images/icons/more.png</navigationIcon>
+      <uri>.views/more.html</uri>
+    </view>
+  </views>
+</template>

@@ -1,0 +1,56 @@
+{ "locations":
+[
+    { "name": "Aliso Viejo",
+      "zip": "92656",
+
+      "feeds": {
+        "news": [
+          [ "news", { "title": "Local News", "named": "4dfbd80a7414b336280000ef" } ],
+          [ "sports", { "title": "OCVarsity H.S. Sports", "named": "4dfbd85f3012151f39000132" } ]
+        ],
+
+        "photos": "4dfbd8bc3012151f35000140",
+        "realty": "4dfbd9833012151f35000144",
+        "video": "31196919001"
+      }
+    },
+
+    { "name": "Costa Mesa",
+      "zip": "92626",
+
+      "feeds": {
+        "news": [
+          [ "news", { "title": "Local News", "named": "4dfe6c927414b33624000ccc" } ],
+          [ "sports", { "title": "OCVarsity H.S. Sports", "named": "4dfe6c277414b33628000cfe" } ]
+        ],
+
+        "photos": "4dfe6cc57414b33621000cd5",
+        "realty": "4dfbd9833012151f35000144",
+        "video": "31183998001"
+      }
+    },
+
+    { "name": "Huntington Beach",
+      "zip": "92648",
+
+      "feeds": {
+        "news": [
+          [ "news", { "title": "Local News", "named": "4dfeadc13012151f35000e62" } ],
+          [ "sports", { "title": "OCVarsity H.S. Sports", "named": "4dfeade77414b33624000e1e" } ]
+        ],
+
+        "realty": "4dfeae387414b33621000e26",
+        "photos": "4dfeae0f3012151f35000e63",
+        "video": "31183998001"
+      }
+    }
+],
+
+"zventsApi": "MFGWWCCFMXKBOWBXCFJVARHRAWTJBQQFEIVLXJTBRBOXRKITEPNFNNFNVRINIUHR",
+"zventsFormat": "http://www.zvents.com/partner_rest/search?key={0}&where={1}&when={2}&sort=1&format=json",
+
+"videoApiFormat": "http://api.brightcove.com/services/library?command=find_playlists_by_ids&token={0}&playlist_ids={1}&video_fields=name%2Cid%2CFLVURL%2CthumbnailURL%2CvideoStillURL%2CshortDescription&media_delivery=HTTP_IOS&fields=name%2Cid%2CvideoIds%2Cvideos&get_item_count=true",
+"videoApiToken": "SThxVLlkWyI1aJL7fHlEn1SimzvxHuFqVUNEjZQOH_Y.",
+
+"weatherApiFormat": "http://www.ocregister.com/common/weather/data/mediarss_extended_{0}.xml"
+}

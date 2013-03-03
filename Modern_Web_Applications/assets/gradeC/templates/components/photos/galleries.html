@@ -1,0 +1,23 @@
+<div class="galleries">
+  <section class="scroller">
+    <ul class="menu">
+      {{#photos}}
+        <li class="gallery">
+          <div class="content">
+            <span class="thumbnail">
+              {{#media_thumbnail_url}}
+                <img src="{{media_thumbnail_url}}" alt="thumbnail">
+              {{/media_thumbnail_url}}
+
+              {{^media_thumbnail_url}}
+                <span class="default-thumbnail"></span>
+              {{/media_thumbnail_url}}
+            </span>
+            <p class="title"> {{title}} </p>
+            <span class="subtitle"> {{created}} </span>
+          </div>
+        </li>
+      {{/photos}}
+    </ul>
+  </section>
+</div>

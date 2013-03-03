@@ -1,0 +1,22 @@
+<div class="scroller">
+  <div class="scroller-content">
+    <ul class="menu">
+      {{#videos}}
+      <li class="video">
+        <div class="content">
+          <span class="thumbnail">
+            {{#videoStillURL}}
+              <img src="{{videoStillURL}}">
+            {{/videoStillURL}}
+
+            {{^thumbnailURL}}
+              <span class="default-thumbnail"></span>
+            {{/thumbnailURL}}
+          </span>
+          <p class="title">{{name}}</p>
+        </div>
+      </li>
+      {{/videos}}
+    </ul>
+  </div>
+</div>

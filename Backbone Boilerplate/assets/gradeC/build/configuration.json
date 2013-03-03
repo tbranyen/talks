@@ -1,0 +1,27 @@
+{
+  "name": "BrightCove OC",
+
+  "prefix": "../",
+  "scripts": [
+    "js/libs/jquery-1.6.1.js",
+    "js/libs/brightcove/core.js",
+    "js/libs/brightcove/device.js",
+    "js/libs/brightcove/utils.js",
+    "js/libs/brightcove/events.js",
+    "js/libs/brightcove/metrics.js",
+    "js/libs/brightcove/ui.js",
+    "js/boot.js",
+    "js/libs/iscroll.js",
+    "js/libs/scrollr.js",
+    "js/libs/mustache.js",
+    "js/components/brightcove/Component.js",
+    "js/components/NewsComponent.js",
+    "js/components/EventComponent.js",
+    "js/components/WeatherComponent.js",
+    "js/components/PhotoComponent.js",
+    "js/components/VideoComponent.js",
+    "js/helper.js"
+  ],
+
+  "output": "js/production.js"
+}

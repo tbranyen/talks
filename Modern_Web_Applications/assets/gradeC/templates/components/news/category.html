@@ -1,0 +1,40 @@
+<header class="secondary">
+  <h1>OCRegister Local</h1>
+  <img src="{{weather_icon}}">
+  <span class="temp">{{temp}}</span>
+</header>
+
+<aside class="community-edition"><h1>{{edition}}</h1></aside>
+
+<aside class="back"><button>Back</button> <h1>{{category_name}}</h1></aside>
+
+<div class="scroller">
+  <div class="scroller-content">
+    <ul class="menu">
+      {{#category}}
+        <li class="article">
+            <span class="thumbnail">
+              {{#media_thumbnail_url}}
+                <img src="{{media_thumbnail_url}}">
+              {{/media_thumbnail_url}}
+
+              {{^media_thumbnail_url}}
+                <span class="default-thumbnail"></span>
+              {{/media_thumbnail_url}}
+            </span>
+
+
+          <div class="content">
+            <p class="title">{{title}}</p>
+            <span class="subtitle">{{pubDate}}</span>
+          </div>
+        </li>
+        {{#show_ad}}
+        <li class="ad">
+          <a href="http://ad.doubleclick.net/jump/ocr.sant.ocrcommunity.app/news/community/area1/city1;sz=9x9;ord=123456789?" target="_blank"><img src="http://ad.doubleclick.net/ad/ocr.sant.ocrcommunity.app/news/community/area1/city1;sz=9x9;ord=123456789?" width="300" height="50" border="0" alt=""></a>
+        </li>
+        {{/show_ad}}
+      {{/category}}
+    </ul>
+  </div>
+</div>

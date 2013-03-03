@@ -1,0 +1,22 @@
+<div class="latest">
+  <h1>Latest Photo Galleries</h1>
+</div>
+
+<div class="carousel">
+  <ul class="photos">
+    {{#galleries}}
+      <li class="galleries">
+          <ul>
+            {{#gallery}}
+            <li class="gallery">
+              <span class="icon">
+                <img src="{{.}}" alt="thumbnail">
+              </span>
+            </li>
+            {{/gallery}}
+          </ul>
+      </li>
+    {{/galleries}}
+  </ul>
+  <div class="pager"></div>
+</div>

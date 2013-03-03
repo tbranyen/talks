@@ -1,0 +1,104 @@
+/***************************************
+ * Default page setup
+ **************************************/
+html, body, h1, h2, h3, h4, h5, h6, div, ul, li, p, a{ margin: 0px; padding: 0px; }
+
+a { text-decoration: none;}
+/* Page CSS */
+body { margin: 0px; padding: 0px; -webkit-text-size-adjust: none; overflow-x: hidden; font-family: Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+
+/***************************************
+ * Transitions
+ **************************************/
+.scroller { -webkit-box-flex: 1; width:100%; overflow: hidden; position: relative; }
+.page { display: block; overflow: hidden; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: #ffffff; }
+.page-transition { display: block; z-index: 5;}
+.page-active { z-index: 10; }
+
+/** This needs to override the above display to work properly. (unknown) */
+.page { display: -webkit-box; -webkit-box-orient: vertical; -webkit-transform: translate3d(0, 0, 0);}
+
+/*.slide-left-out { z-index: 10; -webkit-transform: translate3d(-100%, 0, 0); -webkit-animation-name: slideouttoleft; } */
+.slide-left-out { z-index: 10; -webkit-transition: -webkit-transform 300ms ease-in-out; -webkit-transform: translate3d(-100%, 0, 0); }
+
+/*.slide-right-out { z-index: 10; -webkit-transform: translate3d(100%, 0, 0); -webkit-animation-name: slideouttoright; }*/
+.slide-right-out { z-index: 10; -webkit-transition: -webkit-transform 300ms ease-in-out; -webkit-transform: translate3d(100%, 0, 0); }
+
+/** Taken from JQ touch and JQM */
+@-webkit-keyframes slideinfromright {
+    from { -webkit-transform: translate3d(100%, 0, 0); }
+    to { -webkit-transform: translate3d(0, 0, 0); }
+}
+
+@-webkit-keyframes slideinfromleft {
+    from { -webkit-transform: translate3d(-100%, 0, 0); }
+    to { -webkit-transform: translate3d(0, 0, 0); }
+}
+
+@-webkit-keyframes slideouttoleft {
+    from { -webkit-transform: translate3d(0, 0, 0); }
+    to { -webkit-transform: translate3d(-100%, 0, 0); }
+}
+
+@-webkit-keyframes slideouttoright {
+    from { -webkit-transform: translate3d(0, 0, 0); }
+    to { -webkit-transform: translate3d(100%, 0, 0); }
+}
+
+/*******************************************
+ * Spinner
+ ******************************************/
+.spinner { width: 4px; height: 12px; z-index: 100; position: absolute; top: 50%; left: 50%; -webkit-animation-name: rotate; -webkit-animation-duration: 1s; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; }
+
+.spinner div { width: 100%; height: 100%; background: #CF5A14; -webkit-border-radius: 10px; position: absolute; }
+
+.spinner div.bar1 { -webkit-transform: rotate(0deg) translate(0, 120%); opacity: 1; }
+
+.spinner div.bar2 { -webkit-transform: rotate(-30deg) translate(0, 120%); opacity: .9; }
+
+.spinner div.bar3 { -webkit-transform: rotate(-60deg) translate(0, 120%);  opacity: .80; }
+
+.spinner div.bar4 { -webkit-transform: rotate(-90deg) translate(0, 120%); opacity: .7; }
+
+.spinner div.bar5 { -webkit-transform: rotate(-120deg) translate(0, 120%); opacity: .6; }
+
+.spinner div.bar6 { -webkit-transform: rotate(-150deg) translate(0, 120%); opacity: .5; }
+
+.spinner div.bar7 { -webkit-transform: rotate(-180deg) translate(0, 120%);  opacity: .4; }
+
+.spinner div.bar8 { -webkit-transform: rotate(-210deg) translate(0, 120%); opacity: .3; }
+
+.spinner div.bar9 { -webkit-transform: rotate(-240deg) translate(0, 120%); opacity: .2; }
+
+.spinner div.bar10 { -webkit-transform: rotate(-270deg) translate(0, 120%); opacity: .1; }
+
+.spinner div.bar11 { -webkit-transform: rotate(-300deg) translate(0, 120%); opacity: .05; }
+
+.spinner div.bar12 { -webkit-transform: rotate(-330deg) translate(0, 120%); opacity: .05; }
+
+@-webkit-keyframes rotate{
+  0%{ -webkit-transform:rotate( 0deg ) }
+  8.32%{ -webkit-transform:rotate( 0deg ) }
+  8.33%{ -webkit-transform:rotate( 30deg ) }
+  16.65%{ -webkit-transform:rotate( 30deg ) }
+  16.66%{ -webkit-transform:rotate( 60deg ) }
+  24.99%{ -webkit-transform:rotate( 60deg ) }
+  25%{ -webkit-transform:rotate( 90deg ) }
+  33.32%{ -webkit-transform:rotate( 90deg ) }
+  33.33%{ -webkit-transform:rotate( 120deg ) }
+  41.65%{ -webkit-transform:rotate( 120deg ) }
+  41.66%{ -webkit-transform:rotate( 150deg ) }
+  49.99%{ -webkit-transform:rotate( 150deg ) }
+  50%{ -webkit-transform:rotate( 180deg ) }
+  58.32%{ -webkit-transform:rotate( 180deg ) }
+  58.33%{ -webkit-transform:rotate( 210deg ) }
+  66.65%{ -webkit-transform:rotate( 210deg ) }
+  66.66%{ -webkit-transform:rotate( 240deg ) }
+  74.99%{ -webkit-transform:rotate( 240deg ) }
+  75%{ -webkit-transform:rotate( 270deg ) }
+  83.32%{ -webkit-transform:rotate( 270deg ) }
+  83.33%{ -webkit-transform:rotate( 300deg ) }
+  91.65%{ -webkit-transform:rotate( 300deg ) }
+  91.66%{ -webkit-transform:rotate( 330deg ) }
+  100%{ -webkit-transform:rotate( 330deg ) }
+}

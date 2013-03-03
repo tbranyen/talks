@@ -1,0 +1,13 @@
+// Brightcove core styles
+@import "brightcove/brightcove-app-cloud.css";
+
+// Common Shared Styles
+@import "common/base";
+@import "news/base";
+@import "weather/base";
+@import "photos/base";
+@import "event/base";
+
+.share {
+  display: none;
+}

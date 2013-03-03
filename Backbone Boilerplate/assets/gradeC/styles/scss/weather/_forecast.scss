@@ -1,0 +1,43 @@
+@mixin forecast {
+  position: relative;
+  padding: 20px;
+
+  h2 {
+    text-transform: uppercase;
+    padding: 5px;
+  }
+
+  ul {
+    padding: 5px;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+
+  h1 {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+
+    color: $gray;
+    font-size: 24px;
+    text-shadow: $dark-gray 1px 1px 0px;
+  }
+
+  dl {
+    width: 100%;
+
+    dt {
+      float: left;
+      margin-bottom: 5px;
+
+      img {
+        width: 13px;
+        padding-right: 4px;
+      }
+    }
+
+    dd {
+      float: right;
+    }
+  }
+}

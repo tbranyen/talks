@@ -1,0 +1,482 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google IO 2012</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-2.1.4.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+<slide class="logoslide fill nobackground" style="background-image: url(images/holygrail.jpg)"></slide>
+
+<slide class="title-slide segue nobackground">
+  <aside class="gdbar"><img src="images/grail_icon.png"></aside>
+  <hgroup class="auto-fadein">
+    <h1 data-config-title></h1>
+    <h2 data-config-subtitle></h2>
+    <p data-config-presenter></p>
+  </hgroup>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Abstract.</h2>
+    <h3>What goes into running an application on both client and server.</h3>
+  </hgroup>
+  <article>
+    <ul>
+      <li>Different types of applications.</li>
+      <li>What is the "holy grail"?</li>
+      <li>Go over concerns and possible solutions.</li>
+      <li>Discuss the example application.</li>
+    </ul>
+    <br>
+    <br>
+    <p>Keep in mind: nothing in this talk is 100%.</p>
+    <p>also...</p>
+    <img src="images/backbone.png">
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Single Page Application (SPA)</h2>
+    <h3></h3>
+  </hgroup>
+  <article>
+    <img src="images/spa.jpg" class="reflect" title="SPA">
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Server Side Application (SSA)</h2>
+    <h3></h3>
+  </hgroup>
+  <article>
+    <img src="images/ssa.jpg" class="reflect" title="SAA">
+  </article>
+</slide>
+
+<slide>
+  <article>
+    <img src="images/site-app.png">
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Why The "Holy Grail"?</h2>
+    <h3>Because doing both seamlessly and effortlessly is mythical.</h3>
+  </hgroup>
+  <article>
+    <p>Run on the server.</p>
+    <pre class="prettyprint" data-lang="bash">
+> node app
+    </pre>
+
+    <p>Run on the client.</p>
+    <pre class="prettyprint" data-lang="html">
+&lt;script src="app.js"&gt;&lt;/script&gt;
+    </pre>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Who Consumes Your Application?</h1>
+    <h3>Traffic comes from everywhere, this is the open web!</h3>
+  </hgroup>
+  <article>
+    <ul>
+      <li>Search engines. (SEO)</li>
+      <li>Everyone. (Accessibility)</li>
+      <li>Controlled environments. (PhoneGap/Air)</li>
+      <li>Semi-controlled environments. (Minimum browser requirements)</li>
+    </ul>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Do You Need Server Rendering?</h2>
+    <h3>Better question is, do you need accessibility?</h3>
+  </hgroup>
+
+  <article>
+    <ul>
+      <li>Try not to make decisions based on performance dreams.</li>
+      <li>Think of your users; fight for them! (y/w @wilto)</li>
+    </ul>
+    <p><img src="images/think.png"></p>
+    <p>If you design the application to be accessible, SEO will
+    be a byproduct and not a focus.</p>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>The Server.</h2>
+  </hgroup>
+  <article>
+    <p>Sharing code will require using something like <a href="http://nodejs.org">Node.js</a>.</p>
+    <br>
+    <br>
+    <p><img src="images/node.png"></p>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <p>You can share other parts of the application, like template fragments or
+    render entire pages headless without the use of Node.js (outside scope of talk).</p>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Abstraction Is Everything.</h2>
+    <h3>Write for the client-side first, then override on the server.</h3>
+  </hgroup>
+
+  <article>
+    <ul>
+      <li>Module abstraction makes loading flexible.</li>
+      <li>Use modules to provide abstraction to your application code.</li>
+      <li>Use a DOM library.</li>
+      <li>Use a code structure library.</li>
+    </ul>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Areas Of Concern.</h2>
+    <h3>Will explain each in detail.</h3>
+  </hgroup>
+  <article>
+    <ul>
+      <li>Running and loading code.</li>
+      <li>Sharing routing logic.</li>
+      <li>Rendering Views.</li>
+      <li>Anchor and form hijacking.</li>
+      <li>Optimizing API data calls.</li>
+    </ul>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Loading Code...</h2>
+    <h3>... is completely different.</h3>
+  </hgroup>
+
+  <article>
+    <p>On the server-side, require with CommonJS synchronous syntax.</p>
+    <pre class="prettyprint" data-lang="javascript">
+var app = require("app");
+    </pre>
+    <p>On the client-side, include with a script tag asynchronously.</p>
+    <pre class="prettyprint" data-lang="html">
+&lt;script src="app.js"&gt;&lt;/script&gt;
+    </pre>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Unify With Modules.</h2>
+    <h3>There are two competing module formats, CJS and everything else.</h3>
+  </hgroup>
+  <article>
+    <table>
+      <tr>
+        <th>Framework</th><th>Module format</th>
+      </tr>
+      <tr>
+        <td>Node.js</td><td>CommonJS</td>
+      </tr>
+      <tr>
+        <td>Dojo</td><td>AMD</td>
+      </tr>
+      <tr>
+        <td>jQuery</td><td>AMD</td>
+      </tr>
+      <tr>
+        <td>d3</td><td>Thinking about browserify...</td>
+      </tr>
+    </table>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Remap Client/Server Dependencies.</h2>
+  </hgroup>
+  <article>
+    <p>What does the following code mean on the server?</p>
+    <br>
+    <p>If written in only CommonJS, it would not be possible to swap out what
+    the meaning of what <code>jquery</code> is.</p>
+    <pre class="prettyprint" data-lang="javascript">
+require("jquery");
+    </pre>
+
+    <br>
+    <p>Using AMD and RequireJS, you can redefine what the meaning of
+    <code>jquery</code> is and load a separate library.</p>
+    <pre class="prettyprint" data-lang="javascript">
+define("jquery", function() { return require("cheerio"); });
+    </pre>
+
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>My Humble Recommendation.</h2>
+    <h3>AMD/RequireJS.</h3>
+  </hgroup>
+  <article>
+    <p>Use the AMD format and the RequireJS loader for the flexibility it offers.</p>
+
+    <pre class="prettyprint" data-lang="javascript">
+// Wrapper enables RequireJS to trace dependencies.
+define(function(require, MyModule) {
+  
+  // Ensure you include dependencies the module requires.
+  var Backbone = require("backbone");
+
+  // Attach directly to the module object, that RequireJS provides.
+  MyModule.View = Backbone.View.extend({ /* ... */ });
+
+});
+    </pre>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Sharing Routes.</h2>
+    <h3>How does the server know what to serve?</h3>
+  </hgroup>
+  <article>
+    <p>Google hash bang</p>
+    <pre>http://previewcode.com/#!detail/5</pre>
+    <p>Redirects compatible search engines to</p>
+    <pre>http://previewcode.com/?_escaped_fragment=detail%2F5</pre>
+    <p>Will not help accessibility at all, not an ideal solution.</p>
+    <p><u>Especially since the server cannot read hashes.</u></p>
+  </article>
+</slide>
+
+<slide>
+  <!-- 
+    Notes:
+
+    Not the fastest solution, because you cannot optimize API requests and
+    are at the mercy of the headless browser.
+  -->
+  <hgroup>
+    <h2>Headless Solution.</h2>
+    <h3>A halting problem.</h3>
+  </hgroup>
+  <article>
+    <p>The server can be thought of as stateless, unlike the client which
+    persists.</p>
+    <p></p>
+    <ul>
+      <li>Knowing when your application finishes rendering for a given page.</li>
+      <li>Complicated with asynchronous loading and rendering.</li>
+      <li>Not the fastest solution...</li>
+    </ul>
+    
+    <br>
+    <br>
+    <p>This is, by far, one of the easiest ways of rendering your
+    application on the server.  For SEO-only needs this could work decent.</p>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Server Routing Abstraction.</h2>
+    <h3>Override Backbone.Router.</h3>
+  </hgroup>
+  <article>
+    <p>Before you load your application code - patch the <code>Backbone.Router</code>.</p>
+
+    <pre class="prettyprint" data-lang="javascript">
+// Create a server-side router.
+var server = express();
+
+// Override the `route` function to bind to express instead of Backbone.
+Backbone.Router.prototype.route = function(route, name) {
+  <b>server.get(route, function(req, res) {
+    // Run the same client-side route function here.
+  });</b>
+};
+
+// Override `start` to start the server, instead of the browser functionality. 
+Backbone.History.prototype.start = function() { server.listen(8000); };
+    </pre>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>View Rendering.</h2>
+    <h3>You've got the code running and routes firing... what next?</h3>
+  </hgroup>
+  <article>
+    <ul>
+      <li>No DOM = No Luck.</li>
+      <li>Understand that jQuery is *not* available on the server.</li>
+      <li>Maintain the same syntax, but abstract.</li>
+      <li>Need to know when top "page" layout has finished rendering.
+        <ul>
+          <li>Otherwise how will the server know when to send content?</li>
+        </ul>
+      </li>
+    </ul>
+
+    <br>
+    <br>
+
+    <p>I wrote a plugin called LayoutManager to help with these issues.</p>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>LayoutManager</h2>
+    <h3>Plugin that assists with Backbone.View server/client rendering.</h3>
+  </hgroup>
+  <article>
+    <ul>
+      <li>Fully unit tested on both client and server.</li>
+      <li>Node compatibility fixes by @jugglinmike (Bocoup)</li>
+    </ul>
+
+    <p>This code works identical on the client <u>and</u> server.</p>
+    <pre class="prettyprint" data-lang="javascript">
+var page = new Backbone.Layout({
+  template: _.template("my-page-template")
+});
+
+page.render();
+//=> my-page-template
+    </pre>
+
+    <p>How?</p>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Anchor Hijacking.</h2>
+    <h3>Ensuring pages are routed through the application.</h3>
+  </hgroup>
+  <article>
+    <p>Anchor tags are easily hijacked and is a feature that is provided by
+    default in the Backbone Boilerplate.</p>
+    <pre class="prettyprint" data-lang="javascript">
+
+$(document).on("click", "a[href]:not([data-bypass])", function(evt) {
+  var href = { prop: $(this).prop("href"), attr: $(this).attr("href") };
+  var root = location.protocol + "//" + location.host + app.root;
+
+  if (href.prop.slice(0, root.length) === root) {
+    <b>evt.preventDefault();</b>
+    Backbone.history.navigate(href.attr, true);
+  }
+});
+</pre>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Optimize API data calls.</h2>
+    <h3></h3>
+  </hgroup>
+  <article>
+    <p>Backbone.Sync override</p>
+    <pre class="prettyprint" data-lang="javascript">
+// Update the Display Model sync.
+Display.Model.prototype.sync = function(method, model, options) {
+  if (method === "read") {
+    api.getFileById(model.id, function(results) {
+      model.set(results);
+    });
+  }
+};
+</pre>
+  </article>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>What are others doing?</h2>
+    <h3>Virtually no consensus.</h3>
+  </hgroup>
+  <article>
+    <table>
+      <tr>
+        <th>Who</th><th>What</th>
+      </tr>
+      <tr>
+        <td>Meteor</td><td>Headless</td>
+      </tr>
+      <tr>
+        <td>Airbnb</td><td>Sharing code, Rendr</td>
+      </tr>
+      <tr>
+        <td>photosnear.me</td><td>Sharing code, YUI 3</td>
+      </tr>
+      <tr>
+        <td>Soundcloud</td><td>Not known, but using modules and Handlebars</td>
+      </tr>
+    </table>
+  </article>
+</slide>
+
+<!--<slide>
+  <hgroup>
+    <h2>Demo application.</h2>
+  </hgroup>
+  <article>
+    <h4>Fork on GitHub</h4>
+  </article>
+</slide>-->
+
+<slide>
+  <article>
+    <div class="centered">
+      <h2>~ Questions ~</h2>
+      <br>
+      <p><img src="images/dawg.jpg"></p>
+    </div>
+  </article>
+</slide>
+
+<slide class="backdrop"></slide>
+
+</slides>
+
+</body>
+</html>

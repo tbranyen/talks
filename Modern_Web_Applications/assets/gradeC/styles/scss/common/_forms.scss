@@ -1,0 +1,33 @@
+.w66 {
+  width: 66% !important;
+}
+
+button {
+  -webkit-box-shadow: 1px 1px 1px #fff;
+  -webkit-border-radius: 0.5em;
+
+  outline-color: $gray;
+
+  font-size: 15px;
+  font-color: $dark-gray;
+
+  border: 1px solid $dark-gray;
+  padding: 0.5em;
+  line-height: 1.2em;
+  display: inline-block;
+}
+
+select {
+  -webkit-box-shadow: 1px 1px 1px #fff;
+  -webkit-border-radius: 0.5em;
+
+  outline-color: $gray;
+
+  font-size: 15px;
+  font-color: $dark-gray;
+
+  border: 1px solid $dark-gray;
+  padding: 0.5em;
+  line-height: 1.2em;
+  display: inline-block;
+}

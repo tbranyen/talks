@@ -1,0 +1,15 @@
+@import "loading";
+@import "location";
+
+#news, #news-component, #news_page {
+  @include loading;
+  @include location;
+
+  .gallery-article {
+    .thumbnail {
+      width: 45px;
+      height: 30px;
+      overflow: hidden;
+    }
+  }
+}

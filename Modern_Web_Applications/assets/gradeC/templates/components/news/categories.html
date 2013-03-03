@@ -1,0 +1,19 @@
+<div class="scroller">
+  <div class="scroller-contents">
+    <ul class="menu">
+      {{#categories}}
+        <li class="category">
+          <div class="content">
+            <span class="thumbnail">
+            {{^thumbnailURL}}
+              <span class="default-thumbnail"></span>
+            {{/thumbnailURL}}
+            </span>
+
+            <p class="title">{{title}}</p>
+          </div>
+        </li>
+      {{/categories}}
+    </ul>
+  </div>
+</div>

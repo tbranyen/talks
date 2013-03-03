@@ -1,0 +1,15 @@
+@import "home";
+@import "gallery";
+@import "photo";
+
+#photo-component, #photo_page, #gallery_page {
+  &[data-view=home] {
+    @include home;
+  }
+
+  .gallery {
+    @include gallery;
+  }
+
+  @include photo;
+}

@@ -1,0 +1,12 @@
+@import "home";
+@import "forecast";
+
+#weather, #weather-component, #weather_page {
+  &[data-view=home] {
+    @include home;
+  }
+
+  .forecast {
+    @include forecast;
+  }
+}

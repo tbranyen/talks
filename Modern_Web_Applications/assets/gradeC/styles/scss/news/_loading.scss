@@ -1,0 +1,12 @@
+@mixin loading {
+  #loading_page {
+    background-color: $yellow;
+    text-align: center;
+
+    img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+    }
+  }
+}
